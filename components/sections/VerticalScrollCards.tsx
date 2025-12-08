@@ -9,7 +9,7 @@ const cards = [
         id: 1,
         title: "Discovery & Problem Solving",
         description: "We bring together research from markets, stakeholders and customers to turn an organisations problems into opportunities. Our deep dive into data and user behavior ensures we're solving the right problems.",
-        icon: "https://solis.premiumthemes.in/wp-content/uploads/2025/06/icon-7.png", // Keeping icons for now or could replace
+        icon: "/icons/discovery.png",
         imageSmall: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2940&auto=format&fit=crop", // Meeting/Discovery
         imageBig: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop", // Team working
         bg: "bg-[#F5F5F7]", // Light Gray
@@ -20,7 +20,7 @@ const cards = [
         id: 2,
         title: "Validating Ideas & Service Propositions",
         description: "Our human-centric design approach involves testing propositions and solutions with customers to make good ideas even better. We validate assumptions early to ensure the organisation invests in the right product roadmap.",
-        icon: "https://solis.premiumthemes.in/wp-content/uploads/2025/06/icon-3.png",
+        icon: "/icons/validation.png",
         imageSmall: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2940&auto=format&fit=crop", // Prototyping/Design
         imageBig: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2725&auto=format&fit=crop", // Design workshop
         bg: "bg-[#FBCFA1]", // Peach
@@ -31,7 +31,7 @@ const cards = [
         id: 3,
         title: "Agile Engineering",
         description: "Whether our technologists are working as consultants or as an engineering team in our studio, our multi-disciplinary approach ensures the design intent is realised throughout the delivery lifecycle with robust, scalable code.",
-        icon: "https://solis.premiumthemes.in/wp-content/uploads/2025/06/icon-12.png",
+        icon: "/icons/engineering.png",
         imageSmall: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2940&auto=format&fit=crop", // Coding/Matrix
         imageBig: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2940&auto=format&fit=crop", // Coding laptop
         bg: "bg-[#A6D9DE]", // Teal
@@ -42,7 +42,7 @@ const cards = [
         id: 4,
         title: "Growth & Ongoing Support",
         description: "Our partnership doesn't end at launch. We provide continuous data monitoring, iterative improvements, and support to ensure your product scales and evolves with your business needs.",
-        icon: "https://solis.premiumthemes.in/wp-content/uploads/2025/06/icon-6-2.png",
+        icon: "/icons/growth.png",
         imageSmall: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop", // Analytics/Data
         imageBig: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", // Growth/Graph
         bg: "bg-[#1C1C1C]", // Black

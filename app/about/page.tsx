@@ -42,7 +42,7 @@ export default function AboutPage() {
                     <div>
                         <h1 className="text-5xl md:text-7xl font-medium mb-8">About Us</h1>
                         <p className="text-xl text-gray-400 max-w-2xl">
-                            Our team of experts combines creativity, technology, and strategy to craft innovative digital experiences tailored to your needs.
+                            FROM CONCEPT TO EXECUTION, WE BUILD IMPACTFUL DIGITAL SOLUTIONS THAT RESONATE WITH REAL PEOPLE AND DELIVER RESULTS
                         </p>
                     </div>
                     <div className="flex justify-center md:justify-end">

@@ -119,10 +119,10 @@ export default function TestPage() {
                         </div>
                     </TestSection>
 
-                    {/* SECTION 4: WordPress Scroll Reveal */}
-                    <TestSection title="4. WordPress Scroll Reveal" description="Scroll-driven text opacity reveal with custom links.">
+                    {/* SECTION 4: Scroll Reveal Animation */}
+                    <TestSection title="4. Scroll Reveal Animation" description="Scroll-driven text opacity reveal with custom links.">
                         <div className="py-20">
-                            <WordPressScrollReveal />
+                            <ScrollRevealText />
                         </div>
                     </TestSection>
                 </div>
@@ -169,8 +169,8 @@ export default function TestPage() {
     );
 }
 
-// Component to replicate the WordPress/Elementor snippet behavior
-function WordPressScrollReveal() {
+// Scroll-driven text reveal component
+function ScrollRevealText() {
     const containerRef = React.useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
