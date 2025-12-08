@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#FFFFFF" />
+<stop offset="100%" stop-color="#666666" />
+</linearGradient>
+</defs>
+<g stroke="url(#grad1)" stroke-width="1" fill="none">
+<!-- Funnel shape made of offset circles -->
+<ellipse cx="100" cy="100" rx="40" ry="40" transform="translate(-30, -30)" />
+<ellipse cx="100" cy="100" rx="38" ry="38" transform="translate(-28, -28)" />
+<ellipse cx="100" cy="100" rx="36" ry="36" transform="translate(-26, -26)" />
+<ellipse cx="100" cy="100" rx="34" ry="34" transform="translate(-24, -24)" />
+<ellipse cx="100" cy="100" rx="32" ry="32" transform="translate(-22, -22)" />
+<ellipse cx="100" cy="100" rx="30" ry="30" transform="translate(-20, -20)" />
+<ellipse cx="100" cy="100" rx="28" ry="28" transform="translate(-18, -18)" />
+<ellipse cx="100" cy="100" rx="26" ry="26" transform="translate(-16, -16)" />
+<ellipse cx="100" cy="100" rx="24" ry="24" transform="translate(-14, -14)" />
+<ellipse cx="100" cy="100" rx="22" ry="22" transform="translate(-12, -12)" />
+<ellipse cx="100" cy="100" rx="20" ry="20" transform="translate(-10, -10)" />
+<ellipse cx="100" cy="100" rx="18" ry="18" transform="translate(-8, -8)" />
+<ellipse cx="100" cy="100" rx="16" ry="16" transform="translate(-6, -6)" />
+<ellipse cx="100" cy="100" rx="14" ry="14" transform="translate(-4, -4)" />
+<ellipse cx="100" cy="100" rx="12" ry="12" transform="translate(-2, -2)" />
+<ellipse cx="100" cy="100" rx="10" ry="10" />
+<ellipse cx="100" cy="100" rx="8" ry="8" transform="translate(2, 2)" />
+<ellipse cx="100" cy="100" rx="6" ry="6" transform="translate(4, 4)" />
+<ellipse cx="100" cy="100" rx="4" ry="4" transform="translate(6, 6)" />
+<ellipse cx="100" cy="100" rx="2" ry="2" transform="translate(8, 8)" />
+
+<!-- Outer rings expanding -->
+<ellipse cx="100" cy="100" rx="42" ry="42" transform="translate(-32, -32)" opacity="0.9"/>
+<ellipse cx="100" cy="100" rx="44" ry="44" transform="translate(-34, -34)" opacity="0.8"/>
+<ellipse cx="100" cy="100" rx="46" ry="46" transform="translate(-36, -36)" opacity="0.7"/>
+<ellipse cx="100" cy="100" rx="48" ry="48" transform="translate(-38, -38)" opacity="0.6"/>
+<ellipse cx="100" cy="100" rx="50" ry="50" transform="translate(-40, -40)" opacity="0.5"/>
+</g>
+</svg>

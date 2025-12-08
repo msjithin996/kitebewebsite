@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#FFFFFF" />
+<stop offset="100%" stop-color="#666666" />
+</linearGradient>
+</defs>
+<g stroke="url(#grad4)" stroke-width="1" fill="none">
+<!-- Wavy Torus shape -->
+<path d="M100,20 Q130,20 150,50 T180,100 T150,150 T100,180 T50,150 T20,100 T50,50 T100,20" />
+<path d="M100,25 Q125,25 145,52 T175,100 T145,148 T100,175 T55,148 T25,100 T55,52 T100,25" opacity="0.9"/>
+<path d="M100,30 Q120,30 140,54 T170,100 T140,146 T100,170 T60,146 T30,100 T60,54 T100,30" opacity="0.8"/>
+<path d="M100,35 Q115,35 135,56 T165,100 T135,144 T100,165 T65,144 T35,100 T65,56 T100,35" opacity="0.7"/>
+<path d="M100,40 Q110,40 130,58 T160,100 T130,142 T100,160 T70,142 T40,100 T70,58 T100,40" opacity="0.6"/>
+<path d="M100,45 Q105,45 125,60 T155,100 T125,140 T100,155 T75,140 T45,100 T75,60 T100,45" opacity="0.5"/>
+<path d="M100,50 Q100,50 120,62 T150,100 T120,138 T100,150 T80,138 T50,100 T80,62 T100,50" opacity="0.4"/>
+<path d="M100,55 Q95,55 115,64 T145,100 T115,136 T100,145 T85,136 T55,100 T85,64 T100,55" opacity="0.3"/>
+<path d="M100,60 Q90,60 110,66 T140,100 T110,134 T100,140 T90,134 T60,100 T90,66 T100,60" opacity="0.2"/>
+</g>
+</svg>
