@@ -36,46 +36,13 @@ const processSteps = [
 
 const techStack = ["Unity", "Unreal Engine", "ARKit", "ARCore", "Vuforia", "WebXR", "Oculus", "Hololens"];
 
-import SolarSystem from "@/components/three/SolarSystem";
+
 
 export default function ArVrMrServicePage() {
     return (
         <main className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black overflow-hidden">
             <Navbar />
 
-            {/* Solar System Hero */}
-            <section className="relative h-screen w-full bg-black overflow-hidden flex items-center justify-center">
-                <SolarSystem />
-                <div className="relative z-10 text-center pointer-events-none">
-                    <motion.h1
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="text-6xl md:text-9xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40"
-                    >
-                        SPATIAL<br />COMPUTING
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 1 }}
-                        className="text-gray-400 mt-6 text-xl uppercase tracking-[0.2em]"
-                    >
-                        Beyond the Screen
-                    </motion.p>
-                </div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                >
-                    <span className="text-[10px] uppercase tracking-widest text-gray-500">Scroll to Explore</span>
-                    <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
-                </motion.div>
-            </section>
 
             {/* Hero Section */}
             <section className="relative pt-40 pb-20 px-6 md:px-20 lg:px-40 min-h-[70vh] flex flex-col justify-end border-b border-white/10">
