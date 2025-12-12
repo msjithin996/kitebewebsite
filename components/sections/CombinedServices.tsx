@@ -7,16 +7,10 @@ import CaseStudies from "./CaseStudies";
 
 export default function CombinedServices() {
     return (
-        <motion.div
-            initial={{ backgroundColor: "#1C1C1C", color: "#1C1C1C" }}
-            whileInView={{ backgroundColor: "#ffffff", color: "#000000" }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            viewport={{ amount: 0.1 }}
-            className="w-full"
-        >
+        <div className="w-full bg-white text-black">
             <VerticalScrollCards />
             <Products />
             <CaseStudies />
-        </motion.div>
+        </div>
     );
 }

@@ -28,7 +28,7 @@ export default function Strategy() {
                 <div className="absolute inset-0 bg-black/20" />
             </motion.div>
 
-            <div className="relative z-10 container mx-auto px-6 md:px-20 lg:px-40">
+            <div className="relative z-10 container mx-auto px-4 md:px-14 lg:px-20">
                 <motion.p
                     style={{ y: textY }}
                     initial={{ opacity: 0, y: 20 }}

@@ -182,6 +182,20 @@ const BLOCK_TEMPLATES: Record<string, Block> = {
                 paddingBottom: "4rem",
             }
         }
+    },
+    "article-section": {
+        type: "article-section",
+        data: {
+            title: "Section Title",
+            content: "<p>Write your article content here...</p>",
+            style: {
+                titleColor: "#FFFFFF",
+                textColor: "#CCCCCC",
+                backgroundColor: "transparent",
+                paddingTop: "2rem",
+                paddingBottom: "2rem",
+            }
+        }
     }
 };
 
@@ -199,6 +213,7 @@ export default function PostEditor({ postId }: PostEditorProps) {
     const [postType, setPostType] = useState<"project" | "research">("project");
     const [saving, setSaving] = useState(false);
     const [loading, setLoading] = useState(!!postId);
+    const [activeSidebarTab, setActiveSidebarTab] = useState<"components" | "layers">("components");
     const isEditing = !!postId;
 
     // Initialize postType from URL params for new posts
@@ -415,23 +430,93 @@ export default function PostEditor({ postId }: PostEditorProps) {
 
             <div className="flex-1 flex overflow-hidden">
                 {/* Left Sidebar: Components */}
+                {/* Left Sidebar: Components & Layers */}
                 <div className="w-64 bg-[#1a1a1a] border-r border-white/10 flex flex-col">
-                    <div className="p-4 border-b border-white/5">
-                        <h3 className="text-xs font-semibold uppercase text-gray-500 mb-4">Components</h3>
-                        <div className="space-y-2">
-                            {Object.keys(BLOCK_TEMPLATES).map(type => (
-                                <button
-                                    key={type}
-                                    onClick={() => addBlock(type)}
-                                    className="w-full flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 transition-colors text-left group"
-                                >
-                                    <div className="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white">
-                                        <Plus size={16} />
-                                    </div>
-                                    <span className="text-sm capitalize">{type.replace('-', ' ')}</span>
-                                </button>
-                            ))}
-                        </div>
+                    {/* Sidebar Tabs */}
+                    <div className="flex border-b border-white/10">
+                        <button
+                            onClick={() => setActiveSidebarTab("components")}
+                            className={`flex-1 py-3 text-xs font-semibold uppercase tracking-wider ${activeSidebarTab === "components" ? "bg-white/5 text-white border-b-2 border-blue-500" : "text-gray-500 hover:text-white"}`}
+                        >
+                            Components
+                        </button>
+                        <button
+                            onClick={() => setActiveSidebarTab("layers")}
+                            className={`flex-1 py-3 text-xs font-semibold uppercase tracking-wider ${activeSidebarTab === "layers" ? "bg-white/5 text-white border-b-2 border-blue-500" : "text-gray-500 hover:text-white"}`}
+                        >
+                            Layers
+                        </button>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto">
+                        {activeSidebarTab === "components" ? (
+                            <div className="p-4">
+                                <h3 className="text-xs font-semibold uppercase text-gray-500 mb-4">Add Block</h3>
+                                <div className="space-y-2">
+                                    {Object.keys(BLOCK_TEMPLATES).map(type => (
+                                        <button
+                                            key={type}
+                                            onClick={() => addBlock(type)}
+                                            className="w-full flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 transition-colors text-left group"
+                                        >
+                                            <div className="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white">
+                                                <Plus size={16} />
+                                            </div>
+                                            <span className="text-sm capitalize">{type.replace('-', ' ')}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="p-4">
+                                <h3 className="text-xs font-semibold uppercase text-gray-500 mb-4">Active Layers</h3>
+                                <div className="space-y-2">
+                                    {blocks.length === 0 ? (
+                                        <p className="text-xs text-gray-600 text-center py-4">No blocks added yet.</p>
+                                    ) : (
+                                        blocks.map((block, index) => (
+                                            <div
+                                                key={block.id || index}
+                                                onClick={() => setSelectedBlockIndex(index)}
+                                                className={`flex items-center justify-between p-2 rounded border ${selectedBlockIndex === index ? 'bg-blue-500/10 border-blue-500/50' : 'bg-white/5 border-transparent hover:border-white/10'}`}
+                                            >
+                                                <div className="flex items-center gap-2 overflow-hidden">
+                                                    <div className="w-5 h-5 rounded flex items-center justify-center bg-gray-800 text-gray-400">
+                                                        <span className="text-[10px] font-bold">{index + 1}</span>
+                                                    </div>
+                                                    <span className="text-sm capitalize truncate w-24">{block.type.replace('-', ' ')}</span>
+                                                </div>
+                                                <div className="flex items-center gap-1">
+                                                    <button
+                                                        onClick={(e) => { e.stopPropagation(); moveBlock(index, -1); }}
+                                                        disabled={index === 0}
+                                                        className="p-1 text-gray-400 hover:text-white disabled:opacity-30"
+                                                        title="Move Up"
+                                                    >
+                                                        <ArrowUp size={14} />
+                                                    </button>
+                                                    <button
+                                                        onClick={(e) => { e.stopPropagation(); moveBlock(index, 1); }}
+                                                        disabled={index === blocks.length - 1}
+                                                        className="p-1 text-gray-400 hover:text-white disabled:opacity-30"
+                                                        title="Move Down"
+                                                    >
+                                                        <ArrowDown size={14} />
+                                                    </button>
+                                                    <button
+                                                        onClick={(e) => { e.stopPropagation(); removeBlock(index); }}
+                                                        className="p-1 text-red-500 hover:text-red-400 ml-1"
+                                                        title="Remove"
+                                                    >
+                                                        <Trash2 size={14} />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
