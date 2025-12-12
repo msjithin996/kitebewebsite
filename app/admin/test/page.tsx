@@ -1,97 +1,26 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/sections/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HorizontalProjectGallery from "@/components/sections/HorizontalProjectGallery";
 import VerticalScrollCards from "@/components/sections/VerticalScrollCards";
 import HowWeHelp from "@/components/sections/HowWeHelp";
 
-export default function TestPage() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [password, setPassword] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        // Check for saved authentication on mount
-        const savedAuth = localStorage.getItem("kitebe_test_auth");
-        if (savedAuth === "true") {
-            setIsAuthenticated(true);
-        }
-        setIsLoading(false);
-    }, []);
-
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (password === "1080") {
-            localStorage.setItem("kitebe_test_auth", "true");
-            setIsAuthenticated(true);
-        } else {
-            alert("Incorrect password");
-        }
-    };
-
-    const handleLogout = () => {
-        localStorage.removeItem("kitebe_test_auth");
-        setIsAuthenticated(false);
-        setPassword("");
-    };
-
-    if (isLoading) {
-        return <div className="min-h-screen bg-[#1C1C1C] flex items-center justify-center text-white">Loading...</div>;
-    }
-
-    if (!isAuthenticated) {
-        return (
-            <main className="min-h-screen bg-[#1C1C1C] text-white flex flex-col items-center justify-center px-4">
-                <div className="w-full max-w-md p-8 bg-white/5 rounded-2xl border border-white/10">
-                    <h1 className="text-2xl font-bold mb-6 text-center">Restricted Access</h1>
-                    <form onSubmit={handleLogin} className="space-y-4">
-                        <div>
-                            <label className="block text-sm text-gray-400 mb-2">Enter Password</label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-white transition-colors"
-                                placeholder="••••"
-                                autoFocus
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-white text-black font-medium py-3 rounded-lg hover:bg-gray-200 transition-colors"
-                        >
-                            Access Test Environment
-                        </button>
-                    </form>
-                </div>
-            </main>
-        );
-    }
-
+export default function AdminTestPage() {
     return (
-        <main className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black">
-            <Navbar />
+        <div className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black">
 
             {/* Featured Section: Merged Scroll Reveal & Tooltips */}
             <ScrollRevealTooltipSection />
 
             {/* Standard Container Components */}
-            <div className="pt-32 pb-20 px-6 md:px-20 lg:px-40 container mx-auto">
+            <div className="pt-32 pb-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-12">
                     <div>
                         <h1 className="text-4xl font-bold mb-2">Component Playground</h1>
                         <p className="text-gray-400">Environment for testing code snippets and components.</p>
                     </div>
-                    <button
-                        onClick={handleLogout}
-                        className="text-sm text-red-400 hover:text-red-300 underline"
-                    >
-                        Logout and Clear Storage
-                    </button>
                 </div>
 
                 <div className="space-y-20">
@@ -159,7 +88,7 @@ export default function TestPage() {
             <div className="space-y-20 pb-20">
                 {/* SECTION 5: Horizontal Gallery Scroll */}
                 <div>
-                    <div className="px-6 md:px-20 lg:px-40 container mx-auto mb-6">
+                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
                         <div className="border-l-2 border-white/20 pl-8 py-2">
                             <h2 className="text-2xl font-mono mb-2">5. Horizontal Gallery Scroll</h2>
                             <p className="text-gray-500 text-sm font-mono">Sticky horizontal scroll gallery inspired by standard pinned scrolling effects.</p>
@@ -170,7 +99,7 @@ export default function TestPage() {
 
                 {/* SECTION 6: Vertical Scroll Cards */}
                 <div>
-                    <div className="px-6 md:px-20 lg:px-40 container mx-auto mb-6">
+                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
                         <div className="border-l-2 border-white/20 pl-8 py-2">
                             <h2 className="text-2xl font-mono mb-2">6. Vertical Scroll Cards</h2>
                             <p className="text-gray-500 text-sm font-mono">Sticky vertical card stack animation.</p>
@@ -181,7 +110,7 @@ export default function TestPage() {
 
                 {/* SECTION 7: How We Help Our Clients */}
                 <div>
-                    <div className="px-6 md:px-20 lg:px-40 container mx-auto mb-6">
+                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
                         <div className="border-l-2 border-white/20 pl-8 py-2">
                             <h2 className="text-2xl font-mono mb-2">7. How We Help Our Clients</h2>
                             <p className="text-gray-500 text-sm font-mono">Service offerings section with grid layout.</p>
@@ -192,9 +121,7 @@ export default function TestPage() {
 
 
             </div>
-
-            <Footer />
-        </main>
+        </div>
     );
 }
 
@@ -355,8 +282,8 @@ function ScrollRevealTooltipSection() {
         // HACK: Tall container to allow scrolling "through" the animation
         <div ref={containerRef} className="relative h-[200vh] bg-black">
 
-            <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6 md:px-20 lg:px-40">
-                <div className="container mx-auto max-w-[900px] pb-20">
+            <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6 md:px-12 w-full">
+                <div className="w-full max-w-[900px] mx-auto pb-20">
                     {/* Section Label */}
                     <h3 className="text-sm font-normal uppercase tracking-[0.05em] text-[#cccccc] mb-8 font-sans">
                         Who We Are

@@ -35,7 +35,7 @@ export default function Products() {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section className="py-24 px-6 md:px-20 lg:px-40 overflow-hidden">
+        <section className="pt-24 pb-8 px-6 md:px-20 lg:px-40 overflow-hidden">
             <div className="container mx-auto">
                 <div className="mb-16">
                     <motion.h2

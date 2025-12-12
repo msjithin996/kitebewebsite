@@ -8,15 +8,28 @@ export interface BrandValueItem {
     subtext?: string;
 }
 
+export interface BrandValuesBlockStyle {
+    titleColor?: string;
+    textColor?: string;
+    backgroundColor?: string;
+}
+
 export interface BrandValuesBlockProps {
     title: string;
     subtitle?: string;
     values: BrandValueItem[];
+    style?: BrandValuesBlockStyle;
 }
 
-export default function BrandValuesBlock({ title, subtitle, values }: BrandValuesBlockProps) {
+export default function BrandValuesBlock({ title, subtitle, values, style }: BrandValuesBlockProps) {
     return (
-        <section className="py-24 bg-[#e5e5e0] text-[#1a1a1a]">
+        <section
+            className="py-24"
+            style={{
+                backgroundColor: style?.backgroundColor || "#e5e5e0",
+                color: style?.textColor || "#1a1a1a",
+            }}
+        >
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Left Column - Sticky Title */}
@@ -34,9 +47,11 @@ export default function BrandValuesBlock({ title, subtitle, values }: BrandValue
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4"
+                            style={{ color: style?.titleColor || "inherit" }}
                         >
                             {title}
                         </motion.h2>
+
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import VerticalScrollCards from "./VerticalScrollCards";
 import Products from "./Products";
+import CaseStudies from "./CaseStudies";
 
 export default function CombinedServices() {
     return (
@@ -15,6 +16,7 @@ export default function CombinedServices() {
         >
             <VerticalScrollCards />
             <Products />
+            <CaseStudies />
         </motion.div>
     );
 }
