@@ -2,53 +2,95 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import { collection, query, where, getDocs, orderBy, limit } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 interface CaseStudy {
+    id: string;
     category: string;
     title: string;
     date: string;
-    link: string;
+    slug: string;
 }
-
-const caseStudies: CaseStudy[] = [
-    {
-        category: "AR/VR Solutions",
-        title: "Immersive training simulation for aviation maintenance",
-        date: "15.11.2024",
-        link: "/research/ar-vr-mr",
-    },
-    {
-        category: "App Development",
-        title: "Enterprise mobile application for logistics management",
-        date: "28.10.2024",
-        link: "/research/app-development",
-    },
-    {
-        category: "AI Consultancy",
-        title: "AI-powered predictive analytics platform implementation",
-        date: "12.09.2024",
-        link: "/research/ai-consultancy",
-    },
-    {
-        category: "UI/UX Design",
-        title: "Complete brand redesign for leading fintech startup",
-        date: "05.08.2024",
-        link: "/research/ui-ux-design",
-    },
-    {
-        category: "Web Development",
-        title: "High-performance e-commerce platform with custom CMS",
-        date: "22.07.2024",
-        link: "/research/web-development",
-    },
-];
 
 export default function CaseStudies() {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    const [studies, setStudies] = useState<CaseStudy[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchStudies = async () => {
+            try {
+                // Fetch all projects and filter for research type
+                const q = query(collection(db, "projects"));
+
+                const querySnapshot = await getDocs(q);
+                const fetchedStudies = querySnapshot.docs
+                    .map(doc => {
+                        const data = doc.data();
+
+                        // Extract metadata from blocks if available
+                        const headerBlock = data.blocks?.find((b: any) => b.type === "research-header");
+                        const headerData = headerBlock?.data || {};
+
+                        // Determine date (prefer header date, fallback to createdAt)
+                        let dateStr = headerData.date || "";
+                        let timestamp = 0;
+
+                        if (!dateStr && data.createdAt) {
+                            // Handle ISO string or Firestore Timestamp
+                            const d = new Date(data.createdAt.seconds ? data.createdAt.seconds * 1000 : data.createdAt);
+                            timestamp = d.getTime();
+                            const day = String(d.getDate()).padStart(2, '0');
+                            const month = String(d.getMonth() + 1).padStart(2, '0');
+                            const year = d.getFullYear();
+                            dateStr = `${day}.${month}.${year}`;
+                        } else if (dateStr) {
+                            timestamp = new Date(dateStr).getTime();
+                        }
+
+                        // Ensure date is formatted DD.MM.YYYY even if it came from header as YYYY-MM-DD
+                        try {
+                            if (dateStr.includes('-')) {
+                                const d = new Date(dateStr);
+                                if (!isNaN(d.getTime())) {
+                                    const day = String(d.getDate()).padStart(2, '0');
+                                    const month = String(d.getMonth() + 1).padStart(2, '0');
+                                    const year = d.getFullYear();
+                                    dateStr = `${day}.${month}.${year}`;
+                                }
+                            }
+                        } catch (e) { }
+
+                        return {
+                            id: doc.id,
+                            category: headerData.category || data.category || "Research",
+                            title: headerData.title || data.title || "Untitled Research",
+                            date: dateStr,
+                            timestamp: timestamp,
+                            slug: data.slug || doc.id,
+                            type: data.postType // Use 'postType' as saved by PostEditor
+                        };
+                    })
+                    .filter(item => item.type === "research")
+                    .sort((a, b) => b.timestamp - a.timestamp)
+                    .slice(0, 10);
+
+                console.log("Fetched studies:", fetchedStudies);
+                setStudies(fetchedStudies);
+            } catch (error) {
+                console.error("Error fetching research studies:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchStudies();
+    }, []);
 
     const updateScrollButtons = () => {
         if (scrollContainerRef.current) {
@@ -65,6 +107,22 @@ export default function CaseStudies() {
             setTimeout(updateScrollButtons, 300);
         }
     };
+
+    if (loading) {
+        return (
+            <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden">
+                <div className="container mx-auto">
+                    <div className="flex items-start justify-between mb-12">
+                        <h2 className="text-4xl md:text-6xl tracking-tight opacity-50">
+                            Loading research...
+                        </h2>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    if (studies.length === 0) return null;
 
     return (
         <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden">
@@ -113,23 +171,23 @@ export default function CaseStudies() {
                     className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory"
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
-                    {caseStudies.map((study, index) => (
+                    {studies.map((study, index) => (
                         <motion.div
-                            key={index}
+                            key={study.id}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             className="min-w-[280px] md:min-w-[320px] snap-start"
                         >
-                            <Link href={study.link} className="block group">
+                            <Link href={`/research/${study.slug}`} className="block group">
                                 <div className="bg-[#0d3028] hover:bg-[#0f3a30] rounded-2xl p-6 h-[280px] flex flex-col justify-between transition-all duration-300 group-hover:shadow-xl group-hover:shadow-black/20">
                                     {/* Category Tag */}
                                     <div>
                                         <span className="inline-block px-3 py-1 bg-[#1a4a40] text-[#8BC4B0] text-xs rounded-full mb-4">
                                             {study.category}
                                         </span>
-                                        <h3 className="text-white text-lg font-medium leading-snug">
+                                        <h3 className="text-white text-lg font-medium leading-snug line-clamp-3">
                                             {study.title}
                                         </h3>
                                     </div>

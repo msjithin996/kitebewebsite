@@ -280,6 +280,21 @@ export default function PostEditor({ postId }: PostEditorProps) {
         }
     };
 
+    // Sync Post Title with Research Header Block
+    useEffect(() => {
+        if (postType === "research") {
+            setBlocks(prevBlocks => prevBlocks.map(block => {
+                if (block.type === "research-header" && block.data.title !== title) {
+                    return {
+                        ...block,
+                        data: { ...block.data, title: title }
+                    };
+                }
+                return block;
+            }));
+        }
+    }, [title, postType]);
+
     // Auto-generate slug from title
     useEffect(() => {
         if (!isEditing && title) {
@@ -297,6 +312,12 @@ export default function PostEditor({ postId }: PostEditorProps) {
         if (template) {
             const newBlock = JSON.parse(JSON.stringify(template));
             newBlock.id = Math.random().toString(36).substr(2, 9);
+
+            // If adding a research header, sync with current title immediately
+            if (type === "research-header" && title) {
+                newBlock.data.title = title;
+            }
+
             setBlocks([...blocks, newBlock]);
             setSelectedBlockIndex(blocks.length);
         }
@@ -615,7 +636,12 @@ function PropertyEditor({ block, onChange }: { block: Block; onChange: (data: an
     const style = (block.data as any).style || {};
 
     // Separate content fields from style
-    const contentFields = Object.entries(block.data).filter(([key]) => key !== "style");
+    const contentFields = Object.entries(block.data).filter(([key]) => {
+        if (key === "style") return false;
+        // Hide title for ResearchHeaderBlock as it's synced with main title
+        if (block.type === "research-header" && key === "title") return false;
+        return true;
+    });
 
     return (
         <div className="space-y-4">

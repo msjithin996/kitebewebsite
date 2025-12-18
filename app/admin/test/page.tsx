@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HorizontalProjectGallery from "@/components/sections/HorizontalProjectGallery";
-import VerticalScrollCards from "@/components/sections/VerticalScrollCards";
 import HowWeHelp from "@/components/sections/HowWeHelp";
+import NewsGrid from "@/components/sections/NewsGrid";
 
 export default function AdminTestPage() {
     return (
@@ -15,77 +15,77 @@ export default function AdminTestPage() {
             <ScrollRevealTooltipSection />
 
             {/* Standard Container Components */}
-            <div className="pt-32 pb-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
-                <div className="flex justify-between items-center mb-12">
+            <div className="pt-16 pb-12 px-6 md:px-12 w-full max-w-7xl mx-auto">
+                <div className="flex justify-between items-center mb-8">
                     <div>
-                        <h1 className="text-4xl font-bold mb-2">Component Playground</h1>
-                        <p className="text-gray-400">Environment for testing code snippets and components.</p>
+                        <h1 className="text-3xl font-bold mb-1">Component Playground</h1>
+                        <p className="text-gray-400 text-sm">Environment for testing code snippets and components.</p>
                     </div>
                 </div>
 
-                <div className="space-y-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     {/* SECTION 0: Quick Links */}
                     <TestSection title="0. Quick Links" description="Shortcuts to new templates and pages.">
-                        <div className="flex gap-4">
+                        <div className="flex flex-col gap-3">
                             <Link
                                 href="/projects/template"
-                                className="px-6 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-sm border border-white/10 inline-flex items-center gap-2"
+                                className="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-xs border border-white/10 inline-flex items-center gap-2"
                             >
                                 <span>↗</span> Standard Product Template
                             </Link>
                             <Link
                                 href="/products/atr72-600-flight-simulation"
-                                className="px-6 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-sm border border-white/10 inline-flex items-center gap-2"
+                                className="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-xs border border-white/10 inline-flex items-center gap-2"
                             >
                                 <span>↗</span> Flight Simulation
                             </Link>
                             <Link
                                 href="/products/talktribe"
-                                className="px-6 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-sm border border-white/10 inline-flex items-center gap-2"
+                                className="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white font-mono text-xs border border-white/10 inline-flex items-center gap-2"
                             >
                                 <span>↗</span> TalkTribe
                             </Link>
                         </div>
                     </TestSection>
+
                     {/* SECTION 1: Example Snippet Area */}
                     <TestSection title="1. Test Snippet Area" description="A blank canvas for testing new UI elements.">
-                        <div className="p-10 border border-dashed border-white/20 rounded-xl flex items-center justify-center bg-white/5">
-                            <p className="text-gray-500">Your test code goes here...</p>
+                        <div className="p-8 border border-dashed border-white/20 rounded-xl flex items-center justify-center bg-white/5 h-full min-h-[120px]">
+                            <p className="text-gray-500 text-sm">Your test code goes here...</p>
                         </div>
                     </TestSection>
 
                     {/* SECTION 2: Typography Test */}
                     <TestSection title="2. Typography Check" description="Verifying font weights and headings.">
-                        <div className="space-y-4 p-8 bg-[#111] rounded-xl border border-white/10">
-                            <h1 className="text-5xl font-bold">Heading 1</h1>
-                            <h2 className="text-4xl font-bold">Heading 2</h2>
-                            <h3 className="text-3xl font-medium">Heading 3</h3>
-                            <p className="text-base text-gray-400">Regular paragraph text with standard leading and color.</p>
-                            <p className="text-sm text-gray-500">Small caption text for details.</p>
+                        <div className="space-y-2 p-6 bg-[#111] rounded-xl border border-white/10">
+                            <h1 className="text-3xl font-bold">Heading 1</h1>
+                            <h2 className="text-2xl font-bold">Heading 2</h2>
+                            <h3 className="text-xl font-medium">Heading 3</h3>
+                            <p className="text-sm text-gray-400">Regular paragraph text with standard leading.</p>
                         </div>
                     </TestSection>
 
                     {/* SECTION 3: Animation Test */}
                     <TestSection title="3. Animation Sandbox" description="Testing hover effects and transitions.">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div className="h-20 bg-blue-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer flex items-center justify-center">Hover Me</div>
-                            <div className="h-20 bg-purple-500 rounded-lg hover:rotate-3 transition-transform duration-300 cursor-pointer flex items-center justify-center">Tilt Me</div>
-                            <div className="h-20 bg-green-500 rounded-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] transition-shadow duration-300 cursor-pointer flex items-center justify-center">Glow Me</div>
-                            <div className="h-20 bg-red-500 rounded-lg hover:translate-y-[-5px] transition-transform duration-300 cursor-pointer flex items-center justify-center">Lift Me</div>
-                        </div>
-                    </TestSection>
-
-                    {/* SECTION 4: Scroll Reveal Animation */}
-                    <TestSection title="4. Scroll Reveal Animation" description="Scroll-driven text opacity reveal with custom links.">
-                        <div className="py-20">
-                            <ScrollRevealText />
+                        <div className="grid grid-cols-4 gap-2">
+                            <div className="h-16 bg-blue-500 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer flex items-center justify-center text-xs">Hover</div>
+                            <div className="h-16 bg-purple-500 rounded-lg hover:rotate-3 transition-transform duration-300 cursor-pointer flex items-center justify-center text-xs">Tilt</div>
+                            <div className="h-16 bg-green-500 rounded-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] transition-shadow duration-300 cursor-pointer flex items-center justify-center text-xs">Glow</div>
+                            <div className="h-16 bg-red-500 rounded-lg hover:translate-y-[-5px] transition-transform duration-300 cursor-pointer flex items-center justify-center text-xs">Lift</div>
                         </div>
                     </TestSection>
                 </div>
+
+                {/* SECTION 4: Scroll Reveal Animation (Full Width) */}
+                <TestSection title="4. Scroll Reveal Animation" description="Scroll-driven text opacity reveal.">
+                    <div className="py-10">
+                        <ScrollRevealText />
+                    </div>
+                </TestSection>
             </div>
 
             {/* Full Width Sections */}
-            <div className="space-y-20 pb-20">
+            <div className="space-y-12 pb-12">
                 {/* SECTION 5: Horizontal Gallery Scroll */}
                 <div>
                     <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
@@ -97,16 +97,7 @@ export default function AdminTestPage() {
                     <HorizontalProjectGallery />
                 </div>
 
-                {/* SECTION 6: Vertical Scroll Cards */}
-                <div>
-                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
-                        <div className="border-l-2 border-white/20 pl-8 py-2">
-                            <h2 className="text-2xl font-mono mb-2">6. Vertical Scroll Cards</h2>
-                            <p className="text-gray-500 text-sm font-mono">Sticky vertical card stack animation.</p>
-                        </div>
-                    </div>
-                    <VerticalScrollCards />
-                </div>
+
 
                 {/* SECTION 7: How We Help Our Clients */}
                 <div>
@@ -117,6 +108,17 @@ export default function AdminTestPage() {
                         </div>
                     </div>
                     <HowWeHelp />
+                </div>
+
+                {/* SECTION 8: News & NGOs Layout */}
+                <div>
+                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
+                        <div className="border-l-2 border-white/20 pl-8 py-2">
+                            <h2 className="text-2xl font-mono mb-2">8. News & NGOs Layout</h2>
+                            <p className="text-gray-500 text-sm font-mono">Grid layout for NGOs and news items.</p>
+                        </div>
+                    </div>
+                    <NewsGrid />
                 </div>
 
 
@@ -237,20 +239,12 @@ const tooltipWords: TooltipWord[] = [
 ];
 
 function ScrollRevealTooltipSection() {
-    const containerRef = React.useRef<HTMLDivElement>(null);
     const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-
-    // Standardized Scroll Progress
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
 
     const handleMouseEnter = (word: string) => setActiveTooltip(word);
     const handleMouseLeave = () => setActiveTooltip(null);
 
-    // Prepare content for animation (flattened list of words)
-    // We treat "Tooltip Words" as single atomic units, and split normal text by spaces.
+    // Prepare content
     const normalizedRawSegments: { type: "text" | "tooltip"; value?: string; word?: TooltipWord }[] = [
         { type: "text", value: "We employ an expert combination of " },
         { type: "tooltip", word: tooltipWords[0] }, // innovative concepts
@@ -279,74 +273,68 @@ function ScrollRevealTooltipSection() {
     }).filter((w): w is WordItem => w.text !== "" && w.text !== undefined);
 
     return (
-        // HACK: Tall container to allow scrolling "through" the animation
-        <div ref={containerRef} className="relative h-[200vh] bg-black">
+        <section className="bg-black py-24 px-6 md:px-12 w-full flex flex-col items-center justify-center min-h-[60vh]">
+            <div className="w-full max-w-[900px] mx-auto text-center">
+                {/* Section Label */}
+                <h3 className="text-sm font-normal uppercase tracking-[0.05em] text-[#cccccc] mb-8 font-sans">
+                    Who We Are
+                </h3>
 
-            <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6 md:px-12 w-full">
-                <div className="w-full max-w-[900px] mx-auto pb-20">
-                    {/* Section Label */}
-                    <h3 className="text-sm font-normal uppercase tracking-[0.05em] text-[#cccccc] mb-8 font-sans">
-                        Who We Are
-                    </h3>
+                {/* Main Text */}
+                <div className="text-3xl md:text-5xl lg:text-[48px] font-bold leading-[1.1] text-white font-serif flex flex-wrap justify-center gap-x-[0.25em] gap-y-2"
+                    style={{ fontFamily: '"ITC Clearface", "Times New Roman", serif' }}>
 
-                    {/* Main Text */}
-                    <div className="text-3xl md:text-5xl lg:text-[48px] font-bold leading-[1.1] text-white font-serif flex flex-wrap gap-x-[0.25em] gap-y-2"
-                        style={{ fontFamily: '"ITC Clearface", "Times New Roman", serif' }}>
+                    {words.map((item, i) => (
+                        <AnimatedWord
+                            key={i}
+                            item={item}
+                            index={i}
+                            activeTooltip={activeTooltip}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        />
+                    ))}
+                </div>
 
-                        {words.map((item, i) => (
-                            <AnimatedWord
-                                key={i}
-                                item={item}
-                                index={i}
-                                total={words.length}
-                                scrollYProgress={scrollYProgress}
-                                activeTooltip={activeTooltip}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            />
-                        ))}
-                    </div>
-
-                    {/* CTA Button */}
-                    <motion.div style={{ opacity: useTransform(scrollYProgress, [0.9, 1], [0, 1]) }}>
-                        <a
-                            href="#"
-                            className="inline-block mt-[50px] px-7 py-[14px] border border-white text-white text-[13px] font-semibold uppercase tracking-[0.1em] hover:bg-white hover:text-black transition-colors duration-300 no-underline font-sans"
-                        >
-                            Get Involved
-                        </a>
-                    </motion.div>
+                {/* CTA Button */}
+                <div className="mt-[50px]">
+                    <a
+                        href="#"
+                        className="inline-block px-7 py-[14px] border border-white text-white text-[13px] font-semibold uppercase tracking-[0.1em] hover:bg-white hover:text-black transition-colors duration-300 no-underline font-sans"
+                    >
+                        Get Involved
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
-// Extracted Component to fix Hooks in Loop
+// Extracted Component
 const AnimatedWord = ({
     item,
     index,
-    total,
-    scrollYProgress,
     activeTooltip,
     onMouseEnter,
     onMouseLeave
 }: {
     item: { type: "text"; text: string } | { type: "tooltip"; text: string; color: string; title: string; description: string };
     index: number;
-    total: number;
-    scrollYProgress: any;
     activeTooltip: string | null;
     onMouseEnter: (text: string) => void;
     onMouseLeave: () => void;
 }) => {
-    const start = index / total;
-    const end = start + (1 / total);
-    const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
+    // Simple fade-in effect on mount/view
+    const isText = item.type === "text";
 
-    if (item.type === "text") {
+    if (isText) {
         return (
-            <motion.span style={{ opacity }}>
+            <motion.span
+                initial={{ opacity: 0.1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.01 }}
+            >
                 {item.text}
             </motion.span>
         );
@@ -355,7 +343,10 @@ const AnimatedWord = ({
     const isActive = activeTooltip === item.text;
     return (
         <motion.span
-            style={{ opacity }}
+            initial={{ opacity: 0.1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.01 }}
             className="relative inline-block group"
         >
             <span
@@ -364,7 +355,7 @@ const AnimatedWord = ({
                 className="cursor-pointer transition-opacity duration-200 hover:opacity-80 inline"
                 style={{
                     backgroundImage: gradient,
-                    backgroundAttachment: "fixed",
+                    backgroundAttachment: "fixed", // Keep cool gradient effect
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -379,7 +370,7 @@ const AnimatedWord = ({
                     initial={{ opacity: 0, y: 10, x: "-50%" }}
                     animate={{ opacity: 1, y: 0, x: "-50%" }}
                     exit={{ opacity: 0, y: 10, x: "-50%" }}
-                    className="absolute z-50 bottom-full left-1/2 mb-3 w-[280px] p-5 bg-[#1a1a1a] border border-[#333] text-white rounded-[4px] shadow-2xl"
+                    className="absolute z-50 bottom-full left-1/2 mb-3 w-[280px] p-5 bg-[#1a1a1a] border border-[#333] text-white rounded-[4px] shadow-2xl text-left"
                     style={{ pointerEvents: 'none' }}
                 >
                     <span className="font-bold text-xs uppercase tracking-widest mb-2 block font-sans" style={{ color: "#85f39f" }}>

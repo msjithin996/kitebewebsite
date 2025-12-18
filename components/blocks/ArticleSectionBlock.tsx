@@ -48,7 +48,7 @@ export default function ArticleSectionBlock({ title, content, style }: ArticleSe
                 )}
 
                 <div
-                    className="prose prose-invert prose-lg max-w-none leading-relaxed"
+                    className="rich-text rich-text-invert max-w-none leading-relaxed"
                     style={{ color: textColor }}
                     dangerouslySetInnerHTML={{ __html: content }}
                 />

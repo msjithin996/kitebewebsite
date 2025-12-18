@@ -56,97 +56,96 @@ export default function ResearchHeaderBlock({
 
     return (
         <div
-            className="w-full"
+            className="w-full relative"
             style={{
                 backgroundColor,
                 paddingTop,
                 paddingBottom
             }}
         >
-            <div className="max-w-4xl mx-auto">
-                {/* Meta Header */}
-                <div className="flex items-center gap-4 mb-6 text-sm">
-                    <span className="bg-blue-600/10 text-blue-400 px-3 py-1 rounded-full uppercase font-medium tracking-wider text-xs border border-blue-500/20">
-                        {category}
-                    </span>
-                    <div className="flex items-center gap-2 text-gray-500">
-                        <Calendar size={14} />
-                        <span>{date}</span>
+            <div className="container mx-auto px-6 md:px-20 lg:px-40 grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-12 lg:gap-24 relative">
+                {/* Left Column: Main Header Content */}
+                <div>
+                    {/* Meta Header */}
+                    <div className="flex items-center gap-4 mb-8 text-sm">
+                        <span className="bg-blue-600/10 text-blue-400 px-3 py-1 rounded-full uppercase font-medium tracking-wider text-xs border border-blue-500/20">
+                            {category}
+                        </span>
                     </div>
+
+                    {/* Main Title */}
+                    <h1
+                        className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 tracking-tight leading-tight"
+                        style={{ color: titleColor }}
+                    >
+                        {title}
+                    </h1>
+
+                    {/* Intro Description */}
+                    <div
+                        className="rich-text rich-text-invert max-w-none opacity-90"
+                        style={{ color: textColor }}
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    />
                 </div>
 
-                {/* Main Content */}
-                <h1
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight"
-                    style={{ color: titleColor }}
-                >
-                    {title}
-                </h1>
-
-                <div
-                    className="text-xl md:text-2xl leading-relaxed max-w-3xl mb-8 border-l-4 border-gray-800 pl-6"
-                    style={{ color: textColor }}
-                >
-                    {description}
-                </div>
-
-                {/* Dynamic Metadata Fields */}
-                {metadata && metadata.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-white/5 pt-6">
-                        {metadata.map((item, idx) => (
-                            <div key={idx}>
-                                <h4 className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1">
-                                    {item.label}
-                                </h4>
-                                <p className="text-white font-medium">{item.value}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {/* Author Section */}
-                <div className="flex items-start gap-4 pt-8 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-800 flex-shrink-0 border border-white/10">
-                        {author.avatar ? (
-                            <img src={author.avatar} alt={author.name} className="w-full h-full object-cover" />
-                        ) : (
-                            <div className="w-full h-full flex items-center justify-center text-gray-500">
-                                <User size={24} />
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                            <h4 className="font-bold text-white text-lg">{author.name}</h4>
-                            {author.role && (
-                                <span className="text-gray-500 text-sm bg-white/5 px-2 py-0.5 rounded">
-                                    {author.role}
-                                </span>
-                            )}
+                {/* Right Column: Sticky Sidebar (Metadata & Author) */}
+                <div className="lg:block relative">
+                    <div className="lg:sticky lg:top-8 space-y-10 border-t lg:border-t-0 p-8 lg:p-0 border-white/10 mt-12 lg:mt-0">
+                        {/* Date */}
+                        <div>
+                            <h4 className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">
+                                Date
+                            </h4>
+                            <p className="text-white font-medium flex items-center gap-2">
+                                {/* <Calendar size={14} className="opacity-50" /> */}
+                                {date}
+                            </p>
                         </div>
 
-                        {author.bio && (
-                            <p className="text-gray-400 text-sm mb-3 max-w-xl">
-                                {author.bio}
-                            </p>
-                        )}
+                        {/* Category */}
+                        <div>
+                            <h4 className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">
+                                Category
+                            </h4>
+                            <p className="text-white font-medium uppercase">{category}</p>
+                        </div>
 
-                        {author.socials && author.socials.length > 0 && (
-                            <div className="flex items-center gap-3">
-                                {author.socials.map((social, idx) => (
-                                    <Link
-                                        key={idx}
-                                        href={social.url}
-                                        target="_blank"
-                                        className="text-gray-500 hover:text-white transition-colors p-1"
-                                        title={social.platform}
-                                    >
-                                        <SocialIcon platform={social.platform} size={18} />
-                                    </Link>
+                        {/* Dynamic Metadata Fields (e.g. Reading Time) */}
+                        {metadata && metadata.length > 0 && (
+                            <div className="space-y-6">
+                                {metadata.map((item, idx) => (
+                                    <div key={idx}>
+                                        <h4 className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">
+                                            {item.label}
+                                        </h4>
+                                        <p className="text-white font-medium">{item.value}</p>
+                                    </div>
                                 ))}
                             </div>
                         )}
+
+                        {/* Author Section */}
+                        <div className="pt-8 border-t border-white/10">
+                            <h4 className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-4">
+                                Author
+                            </h4>
+                            <div className="flex items-start gap-4">
+                                {author.avatar && (
+                                    <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-800 flex-shrink-0 border border-white/10">
+                                        <img src={author.avatar} alt={author.name} className="w-full h-full object-cover" />
+                                    </div>
+                                )}
+                                <div>
+                                    <h5 className="font-bold text-white text-base leading-none mb-1">{author.name}</h5>
+                                    {author.role && (
+                                        <span className="text-gray-500 text-xs block mb-2">
+                                            {author.role}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -74,14 +74,16 @@ export default function VerticalScrollCards() {
 
                 {/* Header Section - Split Layout (Compact) */}
                 <div className="shrink-0 py-4 lg:py-6 bg-white z-10 border-b border-black/5">
-                    <div className="container mx-auto px-4 md:px-8 lg:px-12 flex flex-col lg:flex-row gap-6 lg:gap-10 items-end">
-                        <h2 className="text-2xl md:text-4xl lg:text-4xl font-medium leading-tight text-black flex-1">
-                            Our comprehensive approach to digital transformation.
-                        </h2>
-                        <div className="flex-1 lg:max-w-md pb-1">
-                            <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-                                From initial discovery to final delivery, we ensure every step creates value for your business.
-                            </p>
+                    <div className="px-6 md:px-20 lg:px-40">
+                        <div className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-10 items-end">
+                            <h2 className="text-2xl md:text-4xl lg:text-4xl font-medium leading-tight text-black flex-1">
+                                Our comprehensive approach to digital transformation.
+                            </h2>
+                            <div className="flex-1 lg:max-w-md pb-1">
+                                <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                                    From initial discovery to final delivery, we ensure every step creates value for your business.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,11 +105,13 @@ export default function VerticalScrollCards() {
                                 <div className="h-full flex flex-col relative">
                                     {/* Header / Clickable Area */}
                                     <div className={`py-3 md:py-5 cursor-pointer ${isActive ? 'border-b border-black/5' : ''}`}>
-                                        <div className="container mx-auto px-4 md:px-8 lg:px-12 flex items-center gap-4 md:gap-6">
-                                            <div className="w-8 h-8 md:w-10 md:h-10 relative shrink-0">
-                                                <Image src={card.icon} alt="" fill className="object-contain" />
+                                        <div className="px-6 md:px-20 lg:px-40">
+                                            <div className="container mx-auto flex items-center gap-4 md:gap-6">
+                                                <div className="w-8 h-8 md:w-10 md:h-10 relative shrink-0">
+                                                    <Image src={card.icon} alt="" fill className="object-contain" />
+                                                </div>
+                                                <h3 className="text-lg md:text-2xl font-medium whitespace-nowrap truncate">{card.title}</h3>
                                             </div>
-                                            <h3 className="text-lg md:text-2xl font-medium whitespace-nowrap truncate">{card.title}</h3>
                                         </div>
                                     </div>
 
@@ -117,27 +121,25 @@ export default function VerticalScrollCards() {
                                         animate={{ opacity: isActive ? 1 : 0 }}
                                         transition={{ duration: 0.4, delay: 0.1 }}
                                     >
-                                        <div className="container mx-auto px-4 md:px-8 lg:px-12 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                                            {/* Left: Text & Button */}
-                                            <div className="max-w-xl h-full flex flex-col justify-center">
-                                                <p className="text-base md:text-xl lg:text-2xl leading-relaxed mb-6 md:mb-10 line-clamp-4 md:line-clamp-none">
-                                                    {card.description}
-                                                </p>
+                                        <div className="px-6 md:px-20 lg:px-40 h-full">
+                                            <div className="container mx-auto h-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                                {/* Left: Text & Button */}
+                                                <div className="max-w-xl h-full flex flex-col justify-center">
+                                                    <p className="text-base md:text-xl lg:text-2xl leading-relaxed mb-6 md:mb-10 line-clamp-4 md:line-clamp-none">
+                                                        {card.description}
+                                                    </p>
 
-                                                <button className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-transform hover:scale-105 shrink-0 ${card.accent}`}>
-                                                    <svg className="w-5 h-5 md:w-6 md:h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
-                                                    </svg>
-                                                </button>
-                                            </div>
 
-                                            {/* Right: Images */}
-                                            <div className="relative h-[200px] md:h-full w-full min-h-[200px] hidden md:block">
-                                                <div className="absolute top-0 right-0 w-[60%] h-[90%] z-0">
-                                                    <Image src={card.imageBig} alt="" fill className="object-cover rounded-lg shadow-xl" />
                                                 </div>
-                                                <div className="absolute bottom-4 left-4 lg:left-10 w-[45%] h-[60%] z-10">
-                                                    <Image src={card.imageSmall} alt="" fill className="object-cover rounded-lg shadow-2xl border-4 border-white/10" />
+
+                                                {/* Right: Images */}
+                                                <div className="relative h-[200px] md:h-full w-full min-h-[200px] hidden md:block">
+                                                    <div className="absolute top-0 right-0 w-[60%] h-[90%] z-0">
+                                                        <Image src={card.imageBig} alt="" fill className="object-cover rounded-lg shadow-xl" />
+                                                    </div>
+                                                    <div className="absolute bottom-4 left-4 lg:left-10 w-[45%] h-[60%] z-10">
+                                                        <Image src={card.imageSmall} alt="" fill className="object-cover rounded-lg shadow-2xl border-4 border-white/10" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
