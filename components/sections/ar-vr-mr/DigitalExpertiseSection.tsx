@@ -39,7 +39,7 @@ export default function DigitalExpertiseSection() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-3xl md:text-5xl font-light leading-tight mb-12"
                         >
-                            Step into the future of art with Dttio. We provide cutting-edge digital services.
+                            We pioneer the future of interaction. We provide cutting-edge digital services.
                         </motion.h3>
 
                         <div className="flex gap-8 items-start border-l border-white/20 pl-8">
@@ -50,7 +50,7 @@ export default function DigitalExpertiseSection() {
                                 transition={{ duration: 0.6, delay: 0.4 }}
                             >
                                 <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-sm">
-                                    Our innovative solutions are designed to enhance your artistic journey and connect you with a wider audience.
+                                    Our innovative solutions are designed to enhance your brand's digital journey and connect you with a wider audience through immersive technology.
                                 </p>
 
                                 <button className="group flex items-center gap-2 text-white font-medium hover:text-blue-400 transition-colors text-lg">

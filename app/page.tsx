@@ -10,18 +10,18 @@ import News from "@/components/sections/News";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black">
-      <Navbar />
-      <Hero />
-      <Intro />
-      <Projects />
-      <Services />
-      <Strategy />
-      <Expertise />
-      <CombinedServices />
-      <News />
-      <Footer />
-    </main>
-  );
+    return (
+        <main className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black">
+            <Navbar />
+            <Hero />
+            <Intro />
+            <Projects />
+            <Services />
+            <Strategy />
+            <Expertise />
+            <CombinedServices />
+            <News />
+            <Footer />
+        </main>
+    );
 }

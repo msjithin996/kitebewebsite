@@ -6,31 +6,31 @@ import { ArrowRight } from "lucide-react";
 
 const tabs = [
     {
-        id: "innovation",
-        label: "Innovation",
-        title: "How VR is Transforming Our Digital World",
-        description: "Virtual Reality (VR) is no longer a concept of the future—it's a reality reshaping how we interact, work, and entertain ourselves. Our cutting-edge hardware pushes the boundaries of latency and resolution.",
-        image: "/images/ar-vr/neovision-helmet.png",
-        date: "08 February 2025",
-        author: "Henry Leonardo"
+        id: "strategy",
+        label: "Strategy",
+        title: "Strategic Immersive Consulting",
+        description: "We define the roadmap for your spatial computing journey. Our experts analyze use cases, tech feasibility, and ROI to ensure your immersive initiatives align with business goals.",
+        image: "/images/ar-vr/limitless-strategy-real.png",
+        date: "01",
+        author: "Consulting"
     },
     {
-        id: "technology",
-        label: "Technology",
-        title: "Next-Gen Haptics and Neural Interfaces",
-        description: "Feel the virtual world as if it were real. Our proprietary haptic feedback suits and neural link interfaces provide a level of immersion previously thought impossible.",
-        image: "/images/ar-vr/service-drone.png",
-        date: "12 February 2025",
-        author: "Sarah Chen"
+        id: "development",
+        label: "Development",
+        title: "High-Fidelity Engineering",
+        description: "Our diverse team of engineers builds robust, scalable AR/VR applications using top-tier engines. We focus on performance optimization to deliver butter-smooth experiences on any hardware.",
+        image: "/images/ar-vr/limitless-development-real.png",
+        date: "02",
+        author: "Engineering"
     },
     {
-        id: "experience",
-        label: "Experience",
-        title: "Seamless Worlds Without Boundaries",
-        description: "Step into persistent universes that evolve even when you're offline. Connect with millions of users in a single, shared digital expanse.",
-        image: "/images/ar-vr/service-vr.png",
-        date: "15 February 2025",
-        author: "David Miller"
+        id: "deployment",
+        label: "Deployment",
+        title: "Enterprise Scale Integration",
+        description: "We ensure seamless integration of immersive solutions into your existing IT infrastructure. From MDM setup to security protocols, we handle full-scale deployment.",
+        image: "/images/ar-vr/limitless-deployment.png",
+        date: "03",
+        author: "Operations"
     }
 ];
 
@@ -44,7 +44,7 @@ export default function LimitlessPossibilitiesSection() {
                 {/* Main Heading */}
                 <h2 className="text-5xl md:text-7xl font-sans tracking-tight mb-24 max-w-4xl leading-tight">
                     LIMITLESS POSSIBILITIES <br />
-                    WITH NEOVISION
+                    WITH IMMERSIVE TECH
                 </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr_400px] gap-12 lg:gap-24 items-start">
@@ -56,8 +56,8 @@ export default function LimitlessPossibilitiesSection() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab)}
                                 className={`text-left text-lg md:text-xl font-medium transition-colors duration-300 ${activeTab.id === tab.id
-                                        ? "text-white"
-                                        : "text-gray-600 hover:text-gray-400"
+                                    ? "text-white"
+                                    : "text-gray-600 hover:text-gray-400"
                                     }`}
                             >
                                 {tab.label}

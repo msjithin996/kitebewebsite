@@ -6,14 +6,14 @@ import Image from "next/image";
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-screen bg-[#0F1420] text-white overflow-hidden font-sans">
+        <section className="relative min-h-screen bg-white text-black overflow-hidden font-sans">
             {/* Top Navigation Bar - Absolute to span across */}
 
 
             <div className="grid grid-cols-1 lg:grid-cols-[28%_44%_28%] h-screen pt-20">
 
                 {/* COLUMN 1: Branding & Info */}
-                <div className="flex flex-col justify-between p-8 lg:p-6 xl:p-10 border-r border-white/10 relative">
+                <div className="flex flex-col justify-between p-8 lg:p-6 xl:p-10 border-r border-black/10 relative">
                     <div className="mt-20">
                         {/* Main Title */}
                         <motion.h1
@@ -37,8 +37,8 @@ export default function HeroSection() {
                                 IMMERSIVE TECH - <span className="font-mono">V500001</span>
                             </h2>
 
-                            <div className="space-y-4 max-w-xs text-sm text-gray-400 leading-relaxed">
-                                <p className="font-bold text-gray-200">Future of Interaction</p>
+                            <div className="space-y-4 max-w-xs text-sm text-gray-600 leading-relaxed">
+                                <p className="font-bold text-gray-900">Future of Interaction</p>
                                 <p>
                                     Create high-fidelity immersive experiences that blur the line between the physical and digital worlds for varied industries.
                                 </p>
@@ -49,7 +49,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="mt-12 px-8 py-3 border border-white/20 uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all"
+                            className="mt-12 px-8 py-3 border border-black/20 uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all"
                         >
                             Discover
                         </motion.button>
@@ -57,15 +57,15 @@ export default function HeroSection() {
 
                     {/* Social Icons */}
                     <div className="flex gap-6 text-gray-500 mt-auto pt-12">
-                        <Disc size={18} className="hover:text-white cursor-pointer transition-colors" />
-                        <Ship size={18} className="hover:text-white cursor-pointer transition-colors" />
-                        <Twitter size={18} className="hover:text-white cursor-pointer transition-colors" />
-                        <Instagram size={18} className="hover:text-white cursor-pointer transition-colors" />
+                        <Disc size={18} className="hover:text-black cursor-pointer transition-colors" />
+                        <Ship size={18} className="hover:text-black cursor-pointer transition-colors" />
+                        <Twitter size={18} className="hover:text-black cursor-pointer transition-colors" />
+                        <Instagram size={18} className="hover:text-black cursor-pointer transition-colors" />
                     </div>
                 </div>
 
                 {/* COLUMN 2: Main Hero Image */}
-                <div className="relative border-r border-white/10 overflow-hidden bg-[#151a2e]">
+                <div className="relative border-r border-black/10 overflow-hidden bg-white">
                     <motion.div
                         initial={{ opacity: 0, scale: 1.1 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -76,18 +76,18 @@ export default function HeroSection() {
                         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
 
                         <img
-                            src="/images/ar-vr/hero-v2.png"
-                            alt="AiMEE Main Character"
+                            src="/images/ar-vr/hero-ar-industrial-hololens.png"
+                            alt="Industrial AR Visualization"
                             className="w-full h-full object-cover object-top"
                         />
 
                         {/* Gradient overlay at bottom to blend if needed */}
-                        <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#0F1420] to-transparent"></div>
+                        <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
                     </motion.div>
                 </div>
 
                 {/* COLUMN 3: Secondary Feature & Navigation */}
-                <div className="flex flex-col justify-between p-8 lg:p-12 relative bg-[#0F1420]">
+                <div className="flex flex-col justify-between p-8 lg:p-12 relative bg-white">
 
                     {/* Secondary Image Carousel */}
                     <div className="w-full aspect-[4/5] relative mb-12 mt-12 group">
@@ -99,10 +99,10 @@ export default function HeroSection() {
                             <ArrowRightIcon />
                         </div>
 
-                        <div className="w-full h-full rounded-full lg:rounded-none lg:rounded-t-full overflow-hidden border border-white/5 relative">
+                        <div className="w-full h-full rounded-full lg:rounded-none lg:rounded-t-full overflow-hidden border border-black/5 relative">
                             <img
-                                src="/images/ar-vr/hero-character-secondary.png"
-                                alt="Secondary Character"
+                                src="/images/ar-vr/hero-ar-furniture-app-v2.png"
+                                alt="AR Furniture App Demo"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -120,14 +120,14 @@ export default function HeroSection() {
                             Higher Fashion
                         </motion.h3>
 
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <p className="text-sm text-gray-600 leading-relaxed">
                             Experience the next generation of spatial computing. We build robust platforms that redefine how users interact with digital content.
                         </p>
 
                         <div className="flex items-end justify-between pt-8">
                             <span className="text-2xl font-mono text-gray-500">01/09</span>
 
-                            <button className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                            <button className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all">
                                 <RotateIcon />
                             </button>
                         </div>
@@ -141,13 +141,13 @@ export default function HeroSection() {
 
 // Custom Icons to match the specific sharp aesthetics
 const ArrowLeftIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white w-8 h-8">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-black w-8 h-8">
         <path d="M15 18l-6-6 6-6" />
     </svg>
 )
 
 const ArrowRightIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white w-8 h-8">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-black w-8 h-8">
         <path d="M9 18l6-6-6-6" />
     </svg>
 )

@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import HorizontalProjectGallery from "@/components/sections/HorizontalProjectGallery";
 import HowWeHelp from "@/components/sections/HowWeHelp";
 import NewsGrid from "@/components/sections/NewsGrid";
+import ServicesSection from "@/components/sections/ar-vr-mr/ServicesSection";
 
 export default function AdminTestPage() {
     return (
@@ -119,6 +120,16 @@ export default function AdminTestPage() {
                         </div>
                     </div>
                     <NewsGrid />
+                </div>
+
+                <div>
+                    <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mb-6">
+                        <div className="border-l-2 border-white/20 pl-8 py-2">
+                            <h2 className="text-2xl font-mono mb-2">9. Moved Service Section</h2>
+                            <p className="text-gray-500 text-sm font-mono">AR/VR/MR Services Section moved from main project page.</p>
+                        </div>
+                    </div>
+                    <ServicesSection />
                 </div>
 
 

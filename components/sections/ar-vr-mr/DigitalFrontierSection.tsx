@@ -71,7 +71,7 @@ export default function DigitalFrontierSection() {
                         transition={{ delay: 0.8 }}
                         className="text-gray-600 text-lg leading-relaxed max-w-md mb-12"
                     >
-                        Step into The Digital Frontier, where the boundaries between reality and virtual innovation disappear. This is the next era of immersive technology.
+                        We guide enterprises through the Digital Frontier, translating complex emerging technologies into tangible business value and transformative experiences.
                     </motion.p>
 
                     <motion.div

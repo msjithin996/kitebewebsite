@@ -3,7 +3,6 @@
 import Footer from "@/components/sections/Footer";
 import HeroSection from "@/components/sections/ar-vr-mr/HeroSection";
 import DigitalFrontierSection from "@/components/sections/ar-vr-mr/DigitalFrontierSection";
-import ServicesSection from "@/components/sections/ar-vr-mr/ServicesSection";
 import LimitlessPossibilitiesSection from "@/components/sections/ar-vr-mr/LimitlessPossibilitiesSection";
 import DigitalExpertiseSection from "@/components/sections/ar-vr-mr/DigitalExpertiseSection";
 import EntertainmentSection from "@/components/sections/ar-vr-mr/EntertainmentSection";
@@ -17,10 +16,9 @@ export default function ArVrMrServicePage() {
 
             <HeroSection />
             <DigitalFrontierSection />
-            <ServicesSection />
+            <EntertainmentSection />
             <LimitlessPossibilitiesSection />
             <DigitalExpertiseSection />
-            <EntertainmentSection />
             <Footer />
         </main>
     );

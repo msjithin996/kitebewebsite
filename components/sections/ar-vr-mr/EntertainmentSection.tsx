@@ -6,24 +6,59 @@ import { useRef } from "react";
 
 const items = [
     {
-        title: "Immersive 8K Cinema",
-        description: "Experience content like never before with high-fidelity visuals that transport you directly into the scene. Our cinema solutions redefine personal entertainment.",
-        image: "/images/ar-vr/ent-immersive.png",
-        badge: null,
-        icon: <PauseCircle className="text-white w-6 h-6 fill-current" />
-    },
-    {
-        title: "Spatial Content Gallery",
-        description: "Explore a dynamic collection of spatial assets. Interact with 3D models, videos, and panoramic experiences in a seamless virtual environment.",
-        image: "/images/ar-vr/ent-gallery.png",
-        badge: "Spatial Gallery",
+        id: "01",
+        title: "Digital Twin Development",
+        description: "We build digital twins of physical assets, environments, and systems, enabling real-time visualization, monitoring, analysis, and optimization.",
+        image: "/images/ar-vr/digital-twin.png",
+        badge: "01",
         icon: null
     },
     {
-        title: "Virtual Environments",
-        description: "Immerse yourself in breathtaking digital landscapes. From serene mountain tops to futuristic cityscapes, escape to worlds beyond reality.",
+        id: "02",
+        title: "Industry 4.0 Applications",
+        description: "Integration of AR/VR, IoT data, AI, and real-time analytics to modernize manufacturing. We support smart factories with virtual training and predictive monitoring.",
+        image: "/images/ar-vr/industry-4-0.png",
+        badge: "02",
+        icon: null
+    },
+    {
+        id: "03",
+        title: "3D Simulation & Visualization",
+        description: "High-fidelity 3D simulations for complex systems, including flight simulations using black box data, enabling realistic analysis and training.",
+        image: "/images/ar-vr/hero-ar-industrial.png",
+        badge: "03",
+        icon: null
+    },
+    {
+        id: "04",
+        title: "Metaverse & Virtual Ecosystems",
+        description: "Design and deployment of metaverse experiences, virtual spaces, and persistent digital environments for education, collaboration, and brand engagement.",
         image: "/images/ar-vr/ent-environment.png",
-        badge: "Environments",
+        badge: "04",
+        icon: null
+    },
+    {
+        id: "05",
+        title: "Training & Skill Development",
+        description: "Immersive training solutions using AR and VR for safety, technical skills, onboarding, and remote assistance, reducing costs and increasing effectiveness.",
+        image: "/images/ar-vr/vr-training.png",
+        badge: "05",
+        icon: null
+    },
+    {
+        id: "06",
+        title: "Data-Driven Immersive Solutions",
+        description: "Interactive dashboards and visualization tools that transform complex data into intuitive experiences by integrating real-time sensors and analytics.",
+        image: "/images/ar-vr/limitless-deployment-real-v2.png",
+        badge: "06",
+        icon: null
+    },
+    {
+        id: "07",
+        title: "Creative & Cultural XR",
+        description: "Exploration of art, poetry, storytelling, and experimental XR projects, blending technology with creativity to push the boundaries of immersive media.",
+        image: "/images/ar-vr/creative-xr.png",
+        badge: "07",
         icon: null
     }
 ];
@@ -48,8 +83,9 @@ export default function EntertainmentSection() {
             {/* Intro Text - Centered Container */}
             <div className="max-w-[1400px] mx-auto px-6 mb-16">
                 <div className="max-w-4xl">
-                    <p className="text-xl md:text-2xl text-gray-500 leading-relaxed font-light">
-                        We create breathtaking immersive entertainment experiences that defy reality. From private holographic cinemas to interactive spatial galleries, our solutions transport users into new worlds with unparalleled visual fidelity and audio immersion. Redefine how your audience consumes content.
+                    <h2 className="text-sm font-bold tracking-widest uppercase mb-4 text-gray-400">WHAT WE DO</h2>
+                    <p className="text-xl md:text-3xl text-black leading-tight font-light">
+                        We deliver comprehensive immersive technology solutions across diverse domains, translating complex emerging technologies into tangible business value.
                     </p>
                 </div>
             </div>
@@ -94,16 +130,19 @@ export default function EntertainmentSection() {
 
                                 {/* Badge (Pill style) */}
                                 {item.badge && (
-                                    <div className="absolute top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 backdrop-blur-md rounded-full text-white text-xs font-medium">
+                                    <div className="absolute top-6 left-6 px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-black text-xs font-bold font-mono">
                                         {item.badge}
                                     </div>
                                 )}
                             </motion.div>
 
                             <div className="space-y-2 max-w-lg">
-                                <h4 className="font-semibold text-lg leading-snug">
-                                    {item.title} <span className="text-gray-500 font-normal">{item.description}</span>
+                                <h4 className="font-semibold text-2xl leading-tight">
+                                    {item.title}
                                 </h4>
+                                <p className="text-gray-500 text-base leading-relaxed">
+                                    {item.description}
+                                </p>
                             </div>
                         </div>
                     ))}
