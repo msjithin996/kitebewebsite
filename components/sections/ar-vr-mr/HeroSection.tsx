@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-screen bg-white text-black overflow-hidden font-sans">
+        <section className="relative min-h-screen bg-white text-black overflow-hidden font-sans" data-header-theme="dark">
             {/* Top Navigation Bar - Absolute to span across */}
 
 

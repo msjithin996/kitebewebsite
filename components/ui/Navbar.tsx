@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -18,20 +18,60 @@ const navLinks = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState<'light' | 'dark'>('light'); // 'light' means white text (for dark bg), 'dark' means black text (for light bg)
+
+    useEffect(() => {
+        // Observer to detect which section is in view at the top 
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0,
+        };
+
+        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionTheme = entry.target.getAttribute("data-header-theme");
+                    if (sectionTheme === "dark") {
+                        setTheme("dark");
+                    } else {
+                        setTheme("light");
+                    }
+                }
+            });
+        };
+
+        // We need a more granular observer that triggers when a section takes up the top area.
+        // Actually, detecting which element acts as the "background" for the navbar is tricky with basic IntersectObserver.
+        // A better approach: observe all sections passing through a "trigger line" at the top.
+        // rootMargin: '-5% 0px -95% 0px' creates a thin strip at the top.
+
+        const observer = new IntersectionObserver(handleIntersect, {
+            rootMargin: "-20px 0px -90% 0px" // Check what's at the top
+        });
+
+        const sections = document.querySelectorAll("section");
+        sections.forEach((s) => observer.observe(s));
+
+        return () => observer.disconnect();
+    }, []);
+
+    const textColor = theme === 'dark' ? 'text-black' : 'text-white';
+    const bgColor = theme === 'dark' ? 'bg-black' : 'bg-white';
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-12 pointer-events-none">
-                <Link href="/" className="text-2xl font-bold tracking-tighter pointer-events-auto text-white mix-blend-difference">
+            <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-12 pointer-events-none transition-colors duration-300">
+                <Link href="/" className={`text-2xl font-bold tracking-tighter pointer-events-auto transition-colors duration-300 ${textColor}`}>
                     Kitebe
                 </Link>
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="p-2 text-white hover:opacity-80 transition-opacity group pointer-events-auto mix-blend-difference"
+                    className={`p-2 hover:opacity-80 transition-opacity group pointer-events-auto ${textColor}`}
                 >
                     <div className="flex flex-col gap-1.5 items-end">
-                        <span className="w-8 h-0.5 bg-white block transition-all group-hover:w-6" />
-                        <span className="w-5 h-0.5 bg-white block transition-all group-hover:w-8" />
+                        <span className={`w-8 h-0.5 block transition-all group-hover:w-6 ${bgColor}`} />
+                        <span className={`w-5 h-0.5 block transition-all group-hover:w-8 ${bgColor}`} />
                     </div>
                     <span className="sr-only">Open menu</span>
                 </button>

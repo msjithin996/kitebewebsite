@@ -79,7 +79,7 @@ export default function EntertainmentSection() {
     };
 
     return (
-        <section className="bg-white text-black py-32 overflow-hidden">
+        <section className="bg-white text-black py-32 overflow-hidden" data-header-theme="dark">
             {/* Intro Text - Centered Container */}
             <div className="max-w-[1400px] mx-auto px-6 mb-16">
                 <div className="max-w-4xl">

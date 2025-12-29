@@ -32,7 +32,7 @@ export default function ApproachAndPhilosophy() {
     ];
 
     return (
-        <section className="bg-white py-20 px-6 md:px-20 lg:px-40 text-black">
+        <section className="bg-white py-20 px-6 md:px-20 lg:px-40 text-black" data-header-theme="dark">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-10">
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight max-w-xl">

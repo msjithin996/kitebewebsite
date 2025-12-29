@@ -130,11 +130,11 @@ export default function ContactPage() {
                             <div className="group p-8 border-l border-white/10 hover:border-white/50 transition-colors pl-8">
                                 <div className="flex items-center gap-4 mb-4">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                                    <h3 className="text-2xl font-medium">Bangalore, India</h3>
+                                    <h3 className="text-2xl font-medium">Cochin, India</h3>
                                 </div>
                                 <p className="text-gray-400 leading-relaxed">
-                                    123 Innovation Hub, Tech Park<br />
-                                    Sector 5, KA 560001
+                                    Level 4, Dotspace Business Centre, Total Tower,<br />
+                                    Elamakara, Edappally, Cochin, Kerala - 682024
                                 </p>
                             </div>
                             <div className="group p-8 border-l border-white/10 hover:border-white/50 transition-colors pl-8">

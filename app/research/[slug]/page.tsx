@@ -121,7 +121,7 @@ export default function ResearchArticlePage() {
                 <Navbar />
             </div>
 
-            <div className="max-w-[1400px] mx-auto pt-24 pb-32 px-6 lg:px-12">
+            <section className="max-w-[1400px] mx-auto pt-24 pb-32 px-6 lg:px-12" data-header-theme="dark">
                 {/* Back Button */}
                 <div className="mb-12">
                     <Link href="/" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] border border-black/20 px-4 py-2 hover:bg-black hover:text-white transition-colors">
@@ -226,7 +226,7 @@ export default function ResearchArticlePage() {
                     </aside>
 
                 </div>
-            </div>
+            </section>
 
             <div className="bg-[#1C1C1C] text-white">
                 <Footer />

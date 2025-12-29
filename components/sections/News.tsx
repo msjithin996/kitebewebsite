@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function News() {
     return (
-        <section className="pt-8 pb-20 px-6 md:px-20 lg:px-40 bg-white text-black">
+        <section className="pt-8 pb-20 px-6 md:px-20 lg:px-40 bg-white text-black" data-header-theme="dark">
 
             {/* Scrolling Marquee Section */}
             <div className="-mx-6 md:-mx-20 lg:-mx-40 relative overflow-hidden">

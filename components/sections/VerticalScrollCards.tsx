@@ -68,7 +68,7 @@ export default function VerticalScrollCards() {
     });
 
     return (
-        <section ref={containerRef} className="relative h-[300vh] bg-neutral-950">
+        <section ref={containerRef} className="relative h-[300vh] bg-neutral-950" data-header-theme="dark">
             {/* Sticky Viewport */}
             <div className="sticky top-0 h-screen w-full flex flex-col bg-white overflow-hidden">
 

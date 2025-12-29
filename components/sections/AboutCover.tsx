@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function AboutCover() {
     return (
-        <section className="pt-40 pb-20 px-6 md:px-20 lg:px-40 bg-white text-black min-h-[80vh] flex flex-col justify-end">
+        <section className="pt-40 pb-20 px-6 md:px-20 lg:px-40 bg-white text-black min-h-[80vh] flex flex-col justify-end" data-header-theme="dark">
             <div className="container mx-auto">
                 {/* Huge Title */}
                 <div className="mb-8 overflow-hidden">

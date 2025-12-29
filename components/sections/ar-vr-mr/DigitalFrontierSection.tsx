@@ -5,7 +5,7 @@ import { PlayCircle } from "lucide-react";
 
 export default function DigitalFrontierSection() {
     return (
-        <section className="bg-white text-black min-h-[90vh] flex items-center overflow-hidden relative">
+        <section className="bg-white text-black min-h-[90vh] flex items-center overflow-hidden relative" data-header-theme="dark">
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
 
                 {/* Left - Hero Image */}

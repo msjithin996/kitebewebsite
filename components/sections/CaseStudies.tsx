@@ -110,7 +110,7 @@ export default function CaseStudies() {
 
     if (loading) {
         return (
-            <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden">
+            <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden" data-header-theme="dark">
                 <div className="container mx-auto">
                     <div className="flex items-start justify-between mb-12">
                         <h2 className="text-4xl md:text-6xl tracking-tight opacity-50">
@@ -125,7 +125,7 @@ export default function CaseStudies() {
     if (studies.length === 0) return null;
 
     return (
-        <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden">
+        <section className="pt-8 pb-24 px-6 md:px-20 lg:px-40 bg-white overflow-hidden" data-header-theme="dark">
             <div className="container mx-auto">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-12">

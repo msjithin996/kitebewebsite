@@ -123,26 +123,20 @@ export default function Footer() {
 
                             <div className="space-y-3 text-gray-400 text-[16px]">
                                 <a
-                                    href="mailto:agntixs@studio.com"
+                                    href="tel:+917907157244"
                                     target="_blank"
                                     className="block hover:text-white transition-colors"
                                 >
-                                    agntixs@studio.com
-                                </a>
-                                <a
-                                    href="tel:+3025550107"
-                                    target="_blank"
-                                    className="block hover:text-white transition-colors"
-                                >
-                                    +(302) 555-0107
+                                    (91) 79071 57244
                                 </a>
                                 <a
                                     href="https://www.google.com/maps/"
                                     target="_blank"
                                     className="block leading-relaxed hover:text-white transition-colors"
                                 >
-                                    4517 Washington Ave. Manchester,<br />
-                                    Kentucky 39495
+                                    Level 4, Dotspace Business Centre,<br />
+                                    Total Tower, Elamakara, Edappally,<br />
+                                    Cochin, Kerala - 682024
                                 </a>
                             </div>
                         </div>

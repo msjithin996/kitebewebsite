@@ -70,7 +70,7 @@ export default function AboutPage() {
             <ApproachAndPhilosophy />
 
             {/* Additional Content from User Snippet */}
-            <section className="py-20 px-6 md:px-20 lg:px-40 bg-white text-black">
+            <section className="py-20 px-6 md:px-20 lg:px-40 bg-white text-black" data-header-theme="dark">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
                     <div /> {/* Spacer */}
                     <div>

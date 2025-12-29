@@ -241,7 +241,7 @@ export default function AiConsultancyPage() {
             </section>
 
             {/* Transforming Ideas Section */}
-            <section className="py-24 px-6 md:px-20 lg:px-40 bg-white text-black relative z-10">
+            <section className="py-24 px-6 md:px-20 lg:px-40 bg-white text-black relative z-10" data-header-theme="dark">
                 <div className="container mx-auto">
                     {/* Header */}
                     <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-12">

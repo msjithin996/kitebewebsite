@@ -231,7 +231,7 @@ export default function WebDevelopmentPage() {
             <Navbar />
 
             {/* New Falling Bricks Hero Section */}
-            <section className="relative min-h-screen bg-[#E6E6E6] text-black overflow-hidden flex flex-col justify-between">
+            <section className="relative min-h-screen bg-[#E6E6E6] text-black overflow-hidden flex flex-col justify-between" data-header-theme="dark">
                 {/* Grid Background for the effect */}
                 <div className="absolute inset-0 z-0 grid grid-cols-12 md:grid-cols-40 grid-rows-20 gap-0 pointer-events-none">
                     {Array.from({ length: 800 }).map((_, i) => (
