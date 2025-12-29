@@ -11,6 +11,7 @@ import BrandValuesBlock, { BrandValuesBlockProps } from "./BrandValuesBlock";
 import ImpactTextBlock, { ImpactTextBlockProps } from "./ImpactTextBlock";
 import ResearchHeaderBlock, { ResearchHeaderBlockProps } from "./ResearchHeaderBlock";
 import ArticleSectionBlock, { ArticleSectionBlockProps } from "./ArticleSectionBlock";
+import BentoGridBlock, { BentoGridBlockProps } from "./BentoGridBlock";
 
 type BaseBlock = { id?: string };
 
@@ -27,6 +28,7 @@ export type Block = BaseBlock & (
     | { type: "impact-text"; data: ImpactTextBlockProps }
     | { type: "research-header"; data: ResearchHeaderBlockProps }
     | { type: "article-section"; data: ArticleSectionBlockProps }
+    | { type: "bento-grid"; data: BentoGridBlockProps }
     | { type: "unknown"; data: any }
 );
 
@@ -34,7 +36,7 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
     return (
         <>
             {blocks.map((block, index) => {
-                const FullWidthBlocks = ["two-column-text", "product-feature", "carousel", "brand-values", "impact-text", "research-header", "article-section"];
+                const FullWidthBlocks = ["two-column-text", "product-feature", "carousel", "brand-values", "impact-text", "research-header", "article-section", "bento-grid"];
                 const isFullWidth = FullWidthBlocks.includes(block.type);
 
                 const BlockComponent = (() => {
@@ -50,6 +52,7 @@ export default function BlockRenderer({ blocks }: { blocks: Block[] }) {
                         case "impact-text": return <ImpactTextBlock {...block.data} />;
                         case "research-header": return <ResearchHeaderBlock {...block.data} />;
                         case "article-section": return <ArticleSectionBlock {...block.data} />;
+                        case "bento-grid": return <BentoGridBlock {...block.data} />;
                         default: return null;
                     }
                 })();

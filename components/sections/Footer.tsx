@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 // Custom SVG Icons for social media
 const FacebookIcon = () => (
     <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +51,32 @@ export default function Footer() {
                                 scale & grow.
                             </h4>
 
-                            <div className="flex gap-3 mt-6">
+                            <div className="mb-10 mt-8">
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white rounded-full text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 group"
+                                >
+                                    Get In Touch
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                                    >
+                                        <path
+                                            d="M3.33331 12.6667L12.6666 3.33337M12.6666 3.33337V12.4M12.6666 3.33337H3.59998"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
+                                    </svg>
+                                </Link>
+                            </div>
+
+                            <div className="flex gap-3">
                                 {[
                                     { icon: <FacebookIcon />, href: "#" },
                                     { icon: <XIcon />, href: "#" },

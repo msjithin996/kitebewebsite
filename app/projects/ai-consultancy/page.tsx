@@ -50,8 +50,8 @@ export default function AiConsultancyPage() {
                                 transition={{ duration: 0.8 }}
                                 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-[0.95]"
                             >
-                                Go beyond automation.<br />
-                                Step into intelligence.
+                                Intelligent Solutions.<br />
+                                Human Expertise.
                             </motion.h1>
                         </div>
 
@@ -63,7 +63,7 @@ export default function AiConsultancyPage() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="text-xl text-gray-300 leading-relaxed"
                             >
-                                Automation gets tasks done. Intelligence moves your business forward. We get teams thinking faster, building better, and staying ahead.
+                                Leading the way in AI-driven transformation. We help businesses integrate cutting-edge machine learning models into their core operations, driving efficiency and innovation.
                             </motion.p>
 
                         </div>
@@ -80,12 +80,12 @@ export default function AiConsultancyPage() {
                     <div className="flex flex-col lg:flex-row justify-between items-start mb-24">
                         <h2 className="text-5xl md:text-7xl font-bold leading-tight max-w-3xl">
                             Where Algorithms<br />
-                            Meet Aesthetics
+                            Meet Innovation
                         </h2>
                         <div className="mt-8 lg:mt-0 max-w-sm">
                             <div className="px-4 py-2 border border-white/10 rounded-full inline-block mb-6 text-xs uppercase tracking-widest">About Us</div>
                             <p className="text-gray-400 leading-relaxed">
-                                At Ion, we blend the precision of machine intelligence with the soul of design. Our AI-powered systems don't just optimize — they create, adapt, and elevate visual experiences.
+                                At Kitebe, we integrate advanced AI models into your business workflow. We don't just consult — we build intelligent ecosystems that scale with your vision.
                             </p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export default function AiConsultancyPage() {
                                 <div className="flex gap-4 mb-6">
                                     <span className="text-sm font-mono text-gray-500">02</span>
                                     <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
-                                        Streamline workflows with smart tools that reduce manual effort and increase output.
+                                        Enhance productivity with custom AI agents designed to handle complex decision-making processes.
                                     </p>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@ export default function AiConsultancyPage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                             <div className="absolute bottom-12 right-12 text-right">
-                                <h3 className="text-4xl font-bold mb-2 leading-tight">PREDICTIVE DESIGN<br />ANALYTICS</h3>
+                                <h3 className="text-4xl font-bold mb-2 leading-tight">PREDICTIVE BUSINESS<br />ANALYTICS</h3>
                             </div>
                         </div>
                     </div>
@@ -161,12 +161,12 @@ export default function AiConsultancyPage() {
                         <div>
                             <h2 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
                                 Where AI Powers<br />
-                                the Creative
+                                the Future
                             </h2>
                         </div>
                         <div className="max-w-md text-right">
                             <p className="text-gray-400 leading-relaxed">
-                                Ion is where artificial intelligence meets imagination. We harness the speed, logic, and scalability of AI to supercharge human creativity.
+                                Kitebe is where strategic thinking meets machine learning. We bridge the gap between complex data and actionable business intelligence.
                             </p>
                         </div>
                     </div>
@@ -208,9 +208,9 @@ export default function AiConsultancyPage() {
 
                             {/* Creative Systems Card */}
                             <div className="bg-[#161616] p-8 rounded-[30px] border border-white/5 flex-1 flex flex-col justify-center">
-                                <span className="text-xs uppercase tracking-widest text-gray-400 mb-4 block">Creative Systems</span>
+                                <span className="text-xs uppercase tracking-widest text-gray-400 mb-4 block">Intelligent Infrastructure</span>
                                 <p className="text-gray-400 text-sm leading-relaxed">
-                                    Design adaptive websites and campaigns tailored to individual user behavior.
+                                    Build robust, scalable AI architectures that adapt to your growing business needs and data volumes.
                                 </p>
                             </div>
                         </div>
@@ -218,9 +218,9 @@ export default function AiConsultancyPage() {
                         {/* Right Column: Content & Wide Image */}
                         <div className="lg:col-span-5 flex flex-col justify-between gap-8">
                             <div className="pl-4">
-                                <span className="text-xs uppercase tracking-widest text-gray-400 mb-4 block">Generative Visual Content</span>
+                                <span className="text-xs uppercase tracking-widest text-gray-400 mb-4 block">Proprietary AI Models</span>
                                 <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
-                                    Unleash limitless creativity with AI-generated graphics, 3D visuals, and motion design. Our generative systems produce visuals that are not only eye-catching but data-driven.
+                                    Deploy custom machine learning models trained on your specific data to gain a competitive edge in your industry.
                                 </p>
                                 <button className="px-6 py-3 bg-[#222] text-white text-sm rounded-lg hover:bg-[#333] transition-colors border border-white/10">
                                     Learn More
@@ -247,7 +247,7 @@ export default function AiConsultancyPage() {
                     <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-12">
                         <div className="max-w-sm">
                             <p className="text-gray-600 mb-8 leading-relaxed">
-                                An agency is an organization or entity that provides a specific service on behalf of another party. In many cases, agencies act as intermediaries.
+                                Our approach combines technical excellence with deep strategic insight, ensuring that every AI implementation delivers measurable value.
                             </p>
                             <div className="flex items-center gap-4">
                                 <button className="px-8 py-3 border border-black rounded-full font-medium hover:bg-black hover:text-white transition-colors">
@@ -261,8 +261,8 @@ export default function AiConsultancyPage() {
                         <div className="max-w-2xl text-right">
                             <h2 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tight">
                                 Transforming <span className="inline-block align-middle"><Globe className="w-12 h-12 md:w-16 md:h-16" strokeWidth={1} /></span><br />
-                                ideas into visually<br />
-                                stunning realities
+                                data into strategic<br />
+                                business advantages
                             </h2>
                         </div>
                     </div>
@@ -284,9 +284,9 @@ export default function AiConsultancyPage() {
 
                                 <div>
                                     <h3 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                                        720+ projects<br />launched
+                                        150+ Enterprises<br />optimized
                                     </h3>
-                                    <p className="text-gray-500 mb-8">We work in detail for every project, trust me.</p>
+                                    <p className="text-gray-500 mb-8">We deliver precision-engineered AI solutions for modern businesses.</p>
                                     <button className="px-8 py-4 border border-black rounded-full font-bold hover:bg-black hover:text-white transition-colors">
                                         Get Started Now
                                     </button>
@@ -297,10 +297,10 @@ export default function AiConsultancyPage() {
                         {/* Right List */}
                         <div className="flex flex-col gap-4">
                             {[
-                                { title: "Web Design", desc: "We don't believe in one-size-fits-all solutions. Our design process starts with understanding your brand.", active: false },
-                                { title: "Graphic Design", desc: "In a world where mobile devices dominate, having a well-designed app is essential for engaging customers.", active: true },
-                                { title: "Motion Graphic", desc: "Whether you're looking to enhance your marketing videos or create stunning visual content.", active: false },
-                                { title: "Illustration", desc: "We specialize in crafting unique, eye-catching illustrations that elevate your brand.", active: false }
+                                { title: "Strategy", desc: "We develop comprehensive AI roadmaps tailored to your specific business objectives and industry challenges.", active: false },
+                                { title: "Integration", desc: "Seamlessly incorporate AI capabilities into your existing software stack and business processes.", active: true },
+                                { title: "Custom Models", desc: "Train and deploy proprietary machine learning models optimized for your unique datasets.", active: false },
+                                { title: "Optimization", desc: "Continuously refine and enhance your AI systems to maintain peak performance and ROI.", active: false }
                             ].map((item, i) => (
                                 <div key={i} className={`p-8 rounded-[30px] flex flex-col md:flex-row gap-8 items-start transition-all ${item.active ? 'bg-[#6B4BCC] text-white' : 'bg-gray-50 text-black hover:bg-gray-100'}`}>
                                     <div className="whitespace-nowrap">

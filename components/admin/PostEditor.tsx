@@ -196,6 +196,22 @@ const BLOCK_TEMPLATES: Record<string, Block> = {
                 paddingBottom: "2rem",
             }
         }
+    },
+    "bento-grid": {
+        type: "bento-grid",
+        data: {
+            topLeftImage: "https://images.unsplash.com/photo-1600607686527-6fb886090705",
+            topRightImage: "https://images.unsplash.com/photo-1621645558197-293678782fe2",
+            topRightTitle: "A more confident you",
+            topRightSubtitle: "HOW WILL",
+            bottomImage: "https://images.unsplash.com/photo-1616348436168-de43ad0db179",
+            style: {
+                textColor: "#FFFFFF",
+                backgroundColor: "#111111",
+                paddingTop: "4rem",
+                paddingBottom: "4rem",
+            }
+        }
     }
 };
 
