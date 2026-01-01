@@ -5,6 +5,17 @@ import Footer from "@/components/sections/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight, Smartphone, Globe, Code, Zap, Shield, Layout, Bell, Fingerprint, Play, SkipBack, SkipForward, Heart, Menu, Cpu, PlayCircle, MapPin, Thermometer, Sun, Lock, Wifi, Power } from "lucide-react";
+import CreativeProcess from "@/components/sections/app-development/CreativeProcess";
+import OurWork from "@/components/sections/app-development/OurWork";
+
+import AppOrigins from "@/components/sections/app-development/AppOrigins";
+import ProjectShowcase from "@/components/sections/app-development/ProjectShowcase";
+import AppElements from "@/components/sections/app-development/AppElements";
+import DetailedProcess from "@/components/sections/app-development/DetailedProcess";
+import DarkModeShowcase from "@/components/sections/app-development/DarkModeShowcase";
+import AppWireframe from "@/components/sections/app-development/AppWireframe";
+import AppDownloadCTA from "@/components/sections/app-development/AppDownloadCTA";
+import FutureOfMusic from "@/components/sections/app-development/FutureOfMusic";
 
 const ecosystems = [
     {
@@ -440,6 +451,15 @@ export default function AppDevelopmentPage() {
         <main className="min-h-screen bg-[#1C1C1C] text-white selection:bg-white selection:text-black overflow-hidden">
             <Navbar />
 
+            {/* Future of Music Section - New Addition */}
+            <FutureOfMusic />
+
+            {/* Project Showcase Section - New Addition */}
+            <ProjectShowcase />
+
+            {/* App Elements Section - New Addition */}
+            <AppElements />
+
             {/* Hero Section */}
             <section className="relative pt-40 pb-20 px-6 md:px-20 lg:px-40 min-h-[60vh] flex flex-col justify-center border-b border-white/10">
                 <div className="container mx-auto relative z-10">
@@ -604,12 +624,42 @@ export default function AppDevelopmentPage() {
                 </div>
             </section>
 
+
+            {/* App Origins Section - New Addition */}
+            <AppOrigins />
+
+            {/* Creative Process Section - New Addition */}
+            <CreativeProcess />
+
+            {/* Our Work Section - New Addition */}
+            <OurWork />
+
+
+
+
+
+
+
+            {/* Detailed Process Section - New Addition */}
+            <DetailedProcess />
+
+            {/* Dark Mode Showcase Section - New Addition */}
+            <DarkModeShowcase />
+
+            {/* App Wireframe Section - New Addition */}
+            <AppWireframe />
+
+            {/* App Download CTA Section - New Addition */}
+            <AppDownloadCTA />
+
+
+
             {/* Performance & Scale Section */}
             <section className="py-0 border-t border-white/10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
                     <div className="relative h-[50vh] lg:h-auto border-b lg:border-b-0 lg:border-r border-white/10 group overflow-hidden">
                         <Image
-                            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2674&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2674&auto=format&fit=fit"
                             alt="Mobile Engineering"
                             fill
                             className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
@@ -657,122 +707,7 @@ export default function AppDevelopmentPage() {
                 </div>
             </section>
 
-            {/* Interface Craftsmanship */}
-            <section className="py-32 px-6 md:px-20 lg:px-40 bg-black relative overflow-hidden">
-                {/* Background Gradients */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px]" />
-                </div>
 
-                <div className="container mx-auto relative z-10">
-                    <div className="mb-24">
-                        <h2 className="text-5xl md:text-7xl font-medium mb-8">Interface <br /> Craftsmanship</h2>
-                        <div className="h-1 w-20 bg-white mb-8" />
-                        <p className="text-gray-400 text-xl max-w-2xl leading-relaxed">
-                            We design for your users. Every swipe, tap, and pinch is calibrated to create an emotional connection between your customer and your brand.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Card 1 */}
-                        <div className="group relative h-[500px] bg-[#111] rounded-[40px] border border-white/10 overflow-hidden p-8 flex flex-col justify-between hover:border-white/20 transition-colors">
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-medium mb-4">Fluid Motion</h3>
-                                <p className="text-gray-500 leading-relaxed">Animations that follow the laws of physics, making digital objects feel real and responsive.</p>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0" />
-                            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-blue-500/10 blur-3xl group-hover:bg-blue-500/20 transition-colors duration-700" />
-
-                            {/* Visual */}
-                            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-32 h-32">
-                                <motion.div
-                                    animate={{ y: [0, -20, 0], rotate: [0, 5, -5, 0] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-md opacity-50"
-                                />
-                                <motion.div
-                                    animate={{ y: [0, -20, 0], rotate: [0, 5, -5, 0] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute inset-0 w-full h-full border border-white/20 rounded-full backdrop-blur-sm"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="group relative h-[500px] bg-[#111] rounded-[40px] border border-white/10 overflow-hidden p-8 flex flex-col justify-between hover:border-white/20 transition-colors">
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-medium mb-4">Depth & Layering</h3>
-                                <p className="text-gray-500 leading-relaxed">Using Z-axis to create hierarchy and focus, guiding the user's eye naturally through the interface.</p>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0" />
-                            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-purple-500/10 blur-3xl group-hover:bg-purple-500/20 transition-colors duration-700" />
-
-                            {/* Visual */}
-                            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-40 h-40" style={{ perspective: "1000px" }}>
-                                <motion.div
-                                    animate={{ rotateX: [0, 20, 0], rotateY: [0, 20, 0] }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md"
-                                />
-                                <motion.div
-                                    animate={{ rotateX: [0, 20, 0], rotateY: [0, 20, 0], z: 40 }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                                    className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md scale-90 translate-z-10"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="group relative h-[500px] bg-[#111] rounded-[40px] border border-white/10 overflow-hidden p-8 flex flex-col justify-between hover:border-white/20 transition-colors">
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-medium mb-4">Glassmorphism</h3>
-                                <p className="text-gray-500 leading-relaxed">Modern, translucent materials that blur the line between content and background.</p>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0" />
-                            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-emerald-500/10 blur-3xl group-hover:bg-emerald-500/20 transition-colors duration-700" />
-
-                            {/* Visual */}
-                            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-40 h-40">
-                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-full blur-xl" />
-                                <div className="absolute inset-0 bg-white/5 border border-white/20 rounded-2xl backdrop-blur-xl" />
-                                <div className="absolute inset-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Beyond the Screen Section */}
-            <section className="py-32 px-6 md:px-20 lg:px-40 bg-[#0A0A0A] border-t border-white/10 overflow-hidden">
-                <div className="container mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center gap-20">
-                        <div className="lg:w-1/2">
-                            <h2 className="text-5xl md:text-7xl font-medium mb-8">Beyond the <br /> Screen</h2>
-                            <div className="h-1 w-20 bg-blue-500 mb-8" />
-                            <p className="text-gray-400 text-xl leading-relaxed mb-12">
-                                Modern apps don't just live on a phone—they interact with the real world. We help your product connect with IoT devices, wearables, and smart environments.
-                            </p>
-
-                            <div className="grid grid-cols-2 gap-8">
-                                <div>
-                                    <h4 className="text-white text-lg font-medium mb-2">IoT Protocols</h4>
-                                    <p className="text-gray-500 text-sm">MQTT, CoAP, Zigbee integration patterns.</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-white text-lg font-medium mb-2">Low Latency</h4>
-                                    <p className="text-gray-500 text-sm">Sub-100ms response times for real-time control.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="lg:w-1/2 relative">
-                            {/* Interactive Smart Home Card */}
-                            <SmartHomeCard />
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Ecosystems (Widgets Style) */}
             <section className="py-32 px-6 md:px-20 lg:px-40 border-t border-white/10">

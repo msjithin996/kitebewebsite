@@ -60,14 +60,19 @@ export default function KitebeAnimation() {
         const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
         camera.position.z = 20;
 
-        const renderer = new THREE.WebGLRenderer({
-            antialias: true,
-            powerPreference: "high-performance",
-            alpha: true,
-        });
-        renderer.setSize(width, height);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setClearColor(0x000000, 0);
+        let renderer: THREE.WebGLRenderer;
+        try {
+            renderer = new THREE.WebGLRenderer({
+                antialias: true,
+                alpha: true,
+            });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setClearColor(0x000000, 0);
+        } catch (e) {
+            console.error("Failed to initialize WebGLRenderer:", e);
+            return;
+        }
 
         const canvas = renderer.domElement;
         canvas.classList.add("kitebe-canvas");
@@ -389,6 +394,7 @@ export default function KitebeAnimation() {
             cancelAnimationFrame(animationId);
             if (container && canvas) container.removeChild(canvas);
             renderer.dispose();
+            renderer.forceContextLoss();
         };
     }, []);
 
